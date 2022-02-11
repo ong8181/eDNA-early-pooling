@@ -6,6 +6,9 @@ If you want to perform the analyses from the demultiplexing step using the origi
 
 Alternatively, please contact the corresponding author (Masayuki Ushio; ong8181@gmail.com).
 
+# License
+See LICENSE.
+
 # Analysis flow
 Results of the analysis are stored in `xxxxOut` folers.
 
