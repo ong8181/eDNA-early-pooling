@@ -1,0 +1,1 @@
+# Raw sequence files were here.

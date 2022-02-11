@@ -1,0 +1,217 @@
+file                                 format  type  num_seqs    sum_len  min_len  avg_len  max_len  Q1  Q2  Q3  sum_gap  N50  Q20(%)  Q30(%)
+02_Out/E02_T001_S001_R1_ID.fastq.gz  FASTQ   DNA    167,218  1,337,744        8        8        8   4   8   4        0    8   99.13   97.29
+02_Out/E02_T001_S001_R2_ID.fastq.gz  FASTQ   DNA    167,094  1,336,752        8        8        8   4   8   4        0    8   99.62   98.74
+02_Out/E02_T001_S002_R1_ID.fastq.gz  FASTQ   DNA    167,218  1,337,744        8        8        8   4   8   4        0    8   99.13   97.29
+02_Out/E02_T001_S002_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S003_R1_ID.fastq.gz  FASTQ   DNA    167,218  1,337,744        8        8        8   4   8   4        0    8   99.13   97.29
+02_Out/E02_T001_S003_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S004_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S004_R2_ID.fastq.gz  FASTQ   DNA    167,094  1,336,752        8        8        8   4   8   4        0    8   99.62   98.74
+02_Out/E02_T001_S005_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S005_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S006_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S006_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S007_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S007_R2_ID.fastq.gz  FASTQ   DNA    167,094  1,336,752        8        8        8   4   8   4        0    8   99.62   98.74
+02_Out/E02_T001_S008_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S008_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S009_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T001_S009_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T002_S001_R1_ID.fastq.gz  FASTQ   DNA    116,546    932,368        8        8        8   4   8   4        0    8   99.12   97.55
+02_Out/E02_T002_S001_R2_ID.fastq.gz  FASTQ   DNA    116,694    933,552        8        8        8   4   8   4        0    8   99.65   98.83
+02_Out/E02_T002_S002_R1_ID.fastq.gz  FASTQ   DNA    116,546    932,368        8        8        8   4   8   4        0    8   99.12   97.55
+02_Out/E02_T002_S002_R2_ID.fastq.gz  FASTQ   DNA        521      4,168        8        8        8   4   8   4        0    8   98.46   95.75
+02_Out/E02_T002_S003_R1_ID.fastq.gz  FASTQ   DNA    116,546    932,368        8        8        8   4   8   4        0    8   99.12   97.55
+02_Out/E02_T002_S003_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T002_S004_R1_ID.fastq.gz  FASTQ   DNA        522      4,176        8        8        8   4   8   4        0    8   97.75   94.13
+02_Out/E02_T002_S004_R2_ID.fastq.gz  FASTQ   DNA    116,694    933,552        8        8        8   4   8   4        0    8   99.65   98.83
+02_Out/E02_T002_S005_R1_ID.fastq.gz  FASTQ   DNA        522      4,176        8        8        8   4   8   4        0    8   97.75   94.13
+02_Out/E02_T002_S005_R2_ID.fastq.gz  FASTQ   DNA        521      4,168        8        8        8   4   8   4        0    8   98.46   95.75
+02_Out/E02_T002_S006_R1_ID.fastq.gz  FASTQ   DNA        522      4,176        8        8        8   4   8   4        0    8   97.75   94.13
+02_Out/E02_T002_S006_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T002_S007_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T002_S007_R2_ID.fastq.gz  FASTQ   DNA    116,694    933,552        8        8        8   4   8   4        0    8   99.65   98.83
+02_Out/E02_T002_S008_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T002_S008_R2_ID.fastq.gz  FASTQ   DNA        521      4,168        8        8        8   4   8   4        0    8   98.46   95.75
+02_Out/E02_T002_S009_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T002_S009_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S001_R1_ID.fastq.gz  FASTQ   DNA    293,575  2,348,600        8        8        8   4   8   4        0    8   99.01   97.35
+02_Out/E02_T003_S001_R2_ID.fastq.gz  FASTQ   DNA    294,000  2,352,000        8        8        8   4   8   4        0    8   99.59   98.67
+02_Out/E02_T003_S002_R1_ID.fastq.gz  FASTQ   DNA    293,575  2,348,600        8        8        8   4   8   4        0    8   99.01   97.35
+02_Out/E02_T003_S002_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S003_R1_ID.fastq.gz  FASTQ   DNA    293,575  2,348,600        8        8        8   4   8   4        0    8   99.01   97.35
+02_Out/E02_T003_S003_R2_ID.fastq.gz  FASTQ   DNA        750      6,000        8        8        8   4   8   4        0    8   97.92    94.4
+02_Out/E02_T003_S004_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S004_R2_ID.fastq.gz  FASTQ   DNA    294,000  2,352,000        8        8        8   4   8   4        0    8   99.59   98.67
+02_Out/E02_T003_S005_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S005_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S006_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S006_R2_ID.fastq.gz  FASTQ   DNA        750      6,000        8        8        8   4   8   4        0    8   97.92    94.4
+02_Out/E02_T003_S007_R1_ID.fastq.gz  FASTQ   DNA        773      6,184        8        8        8   4   8   4        0    8   97.22    92.8
+02_Out/E02_T003_S007_R2_ID.fastq.gz  FASTQ   DNA    294,000  2,352,000        8        8        8   4   8   4        0    8   99.59   98.67
+02_Out/E02_T003_S008_R1_ID.fastq.gz  FASTQ   DNA        773      6,184        8        8        8   4   8   4        0    8   97.22    92.8
+02_Out/E02_T003_S008_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T003_S009_R1_ID.fastq.gz  FASTQ   DNA        773      6,184        8        8        8   4   8   4        0    8   97.22    92.8
+02_Out/E02_T003_S009_R2_ID.fastq.gz  FASTQ   DNA        750      6,000        8        8        8   4   8   4        0    8   97.92    94.4
+02_Out/E02_T004_S001_R1_ID.fastq.gz  FASTQ   DNA    344,412  2,755,296        8        8        8   4   8   4        0    8   99.04    97.4
+02_Out/E02_T004_S001_R2_ID.fastq.gz  FASTQ   DNA    345,359  2,762,872        8        8        8   4   8   4        0    8   99.62   98.82
+02_Out/E02_T004_S002_R1_ID.fastq.gz  FASTQ   DNA    344,412  2,755,296        8        8        8   4   8   4        0    8   99.04    97.4
+02_Out/E02_T004_S002_R2_ID.fastq.gz  FASTQ   DNA         96        768        8        8        8   4   8   4        0    8   99.48   97.79
+02_Out/E02_T004_S003_R1_ID.fastq.gz  FASTQ   DNA    344,412  2,755,296        8        8        8   4   8   4        0    8   99.04    97.4
+02_Out/E02_T004_S003_R2_ID.fastq.gz  FASTQ   DNA         95        760        8        8        8   4   8   4        0    8   99.34   96.45
+02_Out/E02_T004_S004_R1_ID.fastq.gz  FASTQ   DNA        309      2,472        8        8        8   4   8   4        0    8   97.73   94.42
+02_Out/E02_T004_S004_R2_ID.fastq.gz  FASTQ   DNA    345,359  2,762,872        8        8        8   4   8   4        0    8   99.62   98.82
+02_Out/E02_T004_S005_R1_ID.fastq.gz  FASTQ   DNA        309      2,472        8        8        8   4   8   4        0    8   97.73   94.42
+02_Out/E02_T004_S005_R2_ID.fastq.gz  FASTQ   DNA         96        768        8        8        8   4   8   4        0    8   99.48   97.79
+02_Out/E02_T004_S006_R1_ID.fastq.gz  FASTQ   DNA        309      2,472        8        8        8   4   8   4        0    8   97.73   94.42
+02_Out/E02_T004_S006_R2_ID.fastq.gz  FASTQ   DNA         95        760        8        8        8   4   8   4        0    8   99.34   96.45
+02_Out/E02_T004_S007_R1_ID.fastq.gz  FASTQ   DNA        291      2,328        8        8        8   4   8   4        0    8   97.51   93.51
+02_Out/E02_T004_S007_R2_ID.fastq.gz  FASTQ   DNA    345,359  2,762,872        8        8        8   4   8   4        0    8   99.62   98.82
+02_Out/E02_T004_S008_R1_ID.fastq.gz  FASTQ   DNA        291      2,328        8        8        8   4   8   4        0    8   97.51   93.51
+02_Out/E02_T004_S008_R2_ID.fastq.gz  FASTQ   DNA         96        768        8        8        8   4   8   4        0    8   99.48   97.79
+02_Out/E02_T004_S009_R1_ID.fastq.gz  FASTQ   DNA        291      2,328        8        8        8   4   8   4        0    8   97.51   93.51
+02_Out/E02_T004_S009_R2_ID.fastq.gz  FASTQ   DNA         95        760        8        8        8   4   8   4        0    8   99.34   96.45
+02_Out/E02_T005_S001_R1_ID.fastq.gz  FASTQ   DNA    309,849  2,478,792        8        8        8   4   8   4        0    8   99.14   97.59
+02_Out/E02_T005_S001_R2_ID.fastq.gz  FASTQ   DNA    310,650  2,485,200        8        8        8   4   8   4        0    8   99.69   98.88
+02_Out/E02_T005_S002_R1_ID.fastq.gz  FASTQ   DNA    309,849  2,478,792        8        8        8   4   8   4        0    8   99.14   97.59
+02_Out/E02_T005_S002_R2_ID.fastq.gz  FASTQ   DNA         99        792        8        8        8   4   8   4        0    8   98.48   96.46
+02_Out/E02_T005_S003_R1_ID.fastq.gz  FASTQ   DNA    309,849  2,478,792        8        8        8   4   8   4        0    8   99.14   97.59
+02_Out/E02_T005_S003_R2_ID.fastq.gz  FASTQ   DNA         74        592        8        8        8   4   8   4        0    8   98.14   94.43
+02_Out/E02_T005_S004_R1_ID.fastq.gz  FASTQ   DNA        309      2,472        8        8        8   4   8   4        0    8   97.82   94.01
+02_Out/E02_T005_S004_R2_ID.fastq.gz  FASTQ   DNA    310,650  2,485,200        8        8        8   4   8   4        0    8   99.69   98.88
+02_Out/E02_T005_S005_R1_ID.fastq.gz  FASTQ   DNA        309      2,472        8        8        8   4   8   4        0    8   97.82   94.01
+02_Out/E02_T005_S005_R2_ID.fastq.gz  FASTQ   DNA         99        792        8        8        8   4   8   4        0    8   98.48   96.46
+02_Out/E02_T005_S006_R1_ID.fastq.gz  FASTQ   DNA        309      2,472        8        8        8   4   8   4        0    8   97.82   94.01
+02_Out/E02_T005_S006_R2_ID.fastq.gz  FASTQ   DNA         74        592        8        8        8   4   8   4        0    8   98.14   94.43
+02_Out/E02_T005_S007_R1_ID.fastq.gz  FASTQ   DNA        338      2,704        8        8        8   4   8   4        0    8   98.19   94.49
+02_Out/E02_T005_S007_R2_ID.fastq.gz  FASTQ   DNA    310,650  2,485,200        8        8        8   4   8   4        0    8   99.69   98.88
+02_Out/E02_T005_S008_R1_ID.fastq.gz  FASTQ   DNA        338      2,704        8        8        8   4   8   4        0    8   98.19   94.49
+02_Out/E02_T005_S008_R2_ID.fastq.gz  FASTQ   DNA         99        792        8        8        8   4   8   4        0    8   98.48   96.46
+02_Out/E02_T005_S009_R1_ID.fastq.gz  FASTQ   DNA        338      2,704        8        8        8   4   8   4        0    8   98.19   94.49
+02_Out/E02_T005_S009_R2_ID.fastq.gz  FASTQ   DNA         74        592        8        8        8   4   8   4        0    8   98.14   94.43
+02_Out/E02_T006_S001_R1_ID.fastq.gz  FASTQ   DNA    364,279  2,914,232        8        8        8   4   8   4        0    8   99.02   97.27
+02_Out/E02_T006_S001_R2_ID.fastq.gz  FASTQ   DNA    365,220  2,921,760        8        8        8   4   8   4        0    8   99.53   98.55
+02_Out/E02_T006_S002_R1_ID.fastq.gz  FASTQ   DNA    364,279  2,914,232        8        8        8   4   8   4        0    8   99.02   97.27
+02_Out/E02_T006_S002_R2_ID.fastq.gz  FASTQ   DNA         85        680        8        8        8   4   8   4        0    8   98.97   96.32
+02_Out/E02_T006_S003_R1_ID.fastq.gz  FASTQ   DNA    364,279  2,914,232        8        8        8   4   8   4        0    8   99.02   97.27
+02_Out/E02_T006_S003_R2_ID.fastq.gz  FASTQ   DNA        132      1,056        8        8        8   4   8   4        0    8   99.05   96.21
+02_Out/E02_T006_S004_R1_ID.fastq.gz  FASTQ   DNA        352      2,816        8        8        8   4   8   4        0    8   97.55   92.68
+02_Out/E02_T006_S004_R2_ID.fastq.gz  FASTQ   DNA    365,220  2,921,760        8        8        8   4   8   4        0    8   99.53   98.55
+02_Out/E02_T006_S005_R1_ID.fastq.gz  FASTQ   DNA        352      2,816        8        8        8   4   8   4        0    8   97.55   92.68
+02_Out/E02_T006_S005_R2_ID.fastq.gz  FASTQ   DNA         85        680        8        8        8   4   8   4        0    8   98.97   96.32
+02_Out/E02_T006_S006_R1_ID.fastq.gz  FASTQ   DNA        352      2,816        8        8        8   4   8   4        0    8   97.55   92.68
+02_Out/E02_T006_S006_R2_ID.fastq.gz  FASTQ   DNA        132      1,056        8        8        8   4   8   4        0    8   99.05   96.21
+02_Out/E02_T006_S007_R1_ID.fastq.gz  FASTQ   DNA        451      3,608        8        8        8   4   8   4        0    8   97.62   93.74
+02_Out/E02_T006_S007_R2_ID.fastq.gz  FASTQ   DNA    365,220  2,921,760        8        8        8   4   8   4        0    8   99.53   98.55
+02_Out/E02_T006_S008_R1_ID.fastq.gz  FASTQ   DNA        451      3,608        8        8        8   4   8   4        0    8   97.62   93.74
+02_Out/E02_T006_S008_R2_ID.fastq.gz  FASTQ   DNA         85        680        8        8        8   4   8   4        0    8   98.97   96.32
+02_Out/E02_T006_S009_R1_ID.fastq.gz  FASTQ   DNA        451      3,608        8        8        8   4   8   4        0    8   97.62   93.74
+02_Out/E02_T006_S009_R2_ID.fastq.gz  FASTQ   DNA        132      1,056        8        8        8   4   8   4        0    8   99.05   96.21
+02_Out/E02_T007_S001_R1_ID.fastq.gz  FASTQ   DNA    140,453  1,123,624        8        8        8   4   8   4        0    8   98.92   97.14
+02_Out/E02_T007_S001_R2_ID.fastq.gz  FASTQ   DNA    140,736  1,125,888        8        8        8   4   8   4        0    8   99.53   98.54
+02_Out/E02_T007_S002_R1_ID.fastq.gz  FASTQ   DNA    140,453  1,123,624        8        8        8   4   8   4        0    8   98.92   97.14
+02_Out/E02_T007_S002_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S003_R1_ID.fastq.gz  FASTQ   DNA    140,453  1,123,624        8        8        8   4   8   4        0    8   98.92   97.14
+02_Out/E02_T007_S003_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S004_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S004_R2_ID.fastq.gz  FASTQ   DNA    140,736  1,125,888        8        8        8   4   8   4        0    8   99.53   98.54
+02_Out/E02_T007_S005_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S005_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S006_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S006_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S007_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S007_R2_ID.fastq.gz  FASTQ   DNA    140,736  1,125,888        8        8        8   4   8   4        0    8   99.53   98.54
+02_Out/E02_T007_S008_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S008_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S009_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T007_S009_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T008_S001_R1_ID.fastq.gz  FASTQ   DNA    193,517  1,548,136        8        8        8   4   8   4        0    8   99.15   97.66
+02_Out/E02_T008_S001_R2_ID.fastq.gz  FASTQ   DNA    193,610  1,548,880        8        8        8   4   8   4        0    8   99.75   99.09
+02_Out/E02_T008_S002_R1_ID.fastq.gz  FASTQ   DNA    193,517  1,548,136        8        8        8   4   8   4        0    8   99.15   97.66
+02_Out/E02_T008_S002_R2_ID.fastq.gz  FASTQ   DNA        777      6,216        8        8        8   4   8   4        0    8   98.79   96.16
+02_Out/E02_T008_S003_R1_ID.fastq.gz  FASTQ   DNA    193,517  1,548,136        8        8        8   4   8   4        0    8   99.15   97.66
+02_Out/E02_T008_S003_R2_ID.fastq.gz  FASTQ   DNA        365      2,920        8        8        8   4   8   4        0    8   98.15   95.27
+02_Out/E02_T008_S004_R1_ID.fastq.gz  FASTQ   DNA        629      5,032        8        8        8   4   8   4        0    8   98.49   94.59
+02_Out/E02_T008_S004_R2_ID.fastq.gz  FASTQ   DNA    193,610  1,548,880        8        8        8   4   8   4        0    8   99.75   99.09
+02_Out/E02_T008_S005_R1_ID.fastq.gz  FASTQ   DNA        629      5,032        8        8        8   4   8   4        0    8   98.49   94.59
+02_Out/E02_T008_S005_R2_ID.fastq.gz  FASTQ   DNA        777      6,216        8        8        8   4   8   4        0    8   98.79   96.16
+02_Out/E02_T008_S006_R1_ID.fastq.gz  FASTQ   DNA        629      5,032        8        8        8   4   8   4        0    8   98.49   94.59
+02_Out/E02_T008_S006_R2_ID.fastq.gz  FASTQ   DNA        365      2,920        8        8        8   4   8   4        0    8   98.15   95.27
+02_Out/E02_T008_S007_R1_ID.fastq.gz  FASTQ   DNA        381      3,048        8        8        8   4   8   4        0    8    97.6      94
+02_Out/E02_T008_S007_R2_ID.fastq.gz  FASTQ   DNA    193,610  1,548,880        8        8        8   4   8   4        0    8   99.75   99.09
+02_Out/E02_T008_S008_R1_ID.fastq.gz  FASTQ   DNA        381      3,048        8        8        8   4   8   4        0    8    97.6      94
+02_Out/E02_T008_S008_R2_ID.fastq.gz  FASTQ   DNA        777      6,216        8        8        8   4   8   4        0    8   98.79   96.16
+02_Out/E02_T008_S009_R1_ID.fastq.gz  FASTQ   DNA        381      3,048        8        8        8   4   8   4        0    8    97.6      94
+02_Out/E02_T008_S009_R2_ID.fastq.gz  FASTQ   DNA        365      2,920        8        8        8   4   8   4        0    8   98.15   95.27
+02_Out/E02_T009_S001_R1_ID.fastq.gz  FASTQ   DNA     99,443    795,544        8        8        8   4   8   4        0    8   99.03   97.34
+02_Out/E02_T009_S001_R2_ID.fastq.gz  FASTQ   DNA     99,776    798,208        8        8        8   4   8   4        0    8   99.56   98.61
+02_Out/E02_T009_S002_R1_ID.fastq.gz  FASTQ   DNA     99,443    795,544        8        8        8   4   8   4        0    8   99.03   97.34
+02_Out/E02_T009_S002_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T009_S003_R1_ID.fastq.gz  FASTQ   DNA     99,443    795,544        8        8        8   4   8   4        0    8   99.03   97.34
+02_Out/E02_T009_S003_R2_ID.fastq.gz  FASTQ   DNA        522      4,176        8        8        8   4   8   4        0    8   98.42   94.44
+02_Out/E02_T009_S004_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T009_S004_R2_ID.fastq.gz  FASTQ   DNA     99,776    798,208        8        8        8   4   8   4        0    8   99.56   98.61
+02_Out/E02_T009_S005_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T009_S005_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T009_S006_R1_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T009_S006_R2_ID.fastq.gz  FASTQ   DNA        522      4,176        8        8        8   4   8   4        0    8   98.42   94.44
+02_Out/E02_T009_S007_R1_ID.fastq.gz  FASTQ   DNA        782      6,256        8        8        8   4   8   4        0    8   97.76   93.93
+02_Out/E02_T009_S007_R2_ID.fastq.gz  FASTQ   DNA     99,776    798,208        8        8        8   4   8   4        0    8   99.56   98.61
+02_Out/E02_T009_S008_R1_ID.fastq.gz  FASTQ   DNA        782      6,256        8        8        8   4   8   4        0    8   97.76   93.93
+02_Out/E02_T009_S008_R2_ID.fastq.gz                       0          0        0        0        0   0   0   0        0    0       0       0
+02_Out/E02_T009_S009_R1_ID.fastq.gz  FASTQ   DNA        782      6,256        8        8        8   4   8   4        0    8   97.76   93.93
+02_Out/E02_T009_S009_R2_ID.fastq.gz  FASTQ   DNA        522      4,176        8        8        8   4   8   4        0    8   98.42   94.44
+02_Out/E02_T010_S001_R1_ID.fastq.gz  FASTQ   DNA    377,123  3,016,984        8        8        8   4   8   4        0    8   99.02    97.3
+02_Out/E02_T010_S001_R2_ID.fastq.gz  FASTQ   DNA    377,927  3,023,416        8        8        8   4   8   4        0    8   99.55   98.56
+02_Out/E02_T010_S002_R1_ID.fastq.gz  FASTQ   DNA    377,123  3,016,984        8        8        8   4   8   4        0    8   99.02    97.3
+02_Out/E02_T010_S002_R2_ID.fastq.gz  FASTQ   DNA      9,359     74,872        8        8        8   4   8   4        0    8   98.39   95.25
+02_Out/E02_T010_S003_R1_ID.fastq.gz  FASTQ   DNA    377,123  3,016,984        8        8        8   4   8   4        0    8   99.02    97.3
+02_Out/E02_T010_S003_R2_ID.fastq.gz  FASTQ   DNA        125      1,000        8        8        8   4   8   4        0    8      98    94.9
+02_Out/E02_T010_S004_R1_ID.fastq.gz  FASTQ   DNA      9,418     75,344        8        8        8   4   8   4        0    8   97.91   94.16
+02_Out/E02_T010_S004_R2_ID.fastq.gz  FASTQ   DNA    377,927  3,023,416        8        8        8   4   8   4        0    8   99.55   98.56
+02_Out/E02_T010_S005_R1_ID.fastq.gz  FASTQ   DNA      9,418     75,344        8        8        8   4   8   4        0    8   97.91   94.16
+02_Out/E02_T010_S005_R2_ID.fastq.gz  FASTQ   DNA      9,359     74,872        8        8        8   4   8   4        0    8   98.39   95.25
+02_Out/E02_T010_S006_R1_ID.fastq.gz  FASTQ   DNA      9,418     75,344        8        8        8   4   8   4        0    8   97.91   94.16
+02_Out/E02_T010_S006_R2_ID.fastq.gz  FASTQ   DNA        125      1,000        8        8        8   4   8   4        0    8      98    94.9
+02_Out/E02_T010_S007_R1_ID.fastq.gz  FASTQ   DNA        334      2,672        8        8        8   4   8   4        0    8   98.39   95.21
+02_Out/E02_T010_S007_R2_ID.fastq.gz  FASTQ   DNA    377,927  3,023,416        8        8        8   4   8   4        0    8   99.55   98.56
+02_Out/E02_T010_S008_R1_ID.fastq.gz  FASTQ   DNA        334      2,672        8        8        8   4   8   4        0    8   98.39   95.21
+02_Out/E02_T010_S008_R2_ID.fastq.gz  FASTQ   DNA      9,359     74,872        8        8        8   4   8   4        0    8   98.39   95.25
+02_Out/E02_T010_S009_R1_ID.fastq.gz  FASTQ   DNA        334      2,672        8        8        8   4   8   4        0    8   98.39   95.21
+02_Out/E02_T010_S009_R2_ID.fastq.gz  FASTQ   DNA        125      1,000        8        8        8   4   8   4        0    8      98    94.9
+02_Out/E02_T011_S001_R1_ID.fastq.gz  FASTQ   DNA    424,581  3,396,648        8        8        8   4   8   4        0    8      99   97.28
+02_Out/E02_T011_S001_R2_ID.fastq.gz  FASTQ   DNA    425,686  3,405,488        8        8        8   4   8   4        0    8   99.54   98.59
+02_Out/E02_T011_S002_R1_ID.fastq.gz  FASTQ   DNA    424,581  3,396,648        8        8        8   4   8   4        0    8      99   97.28
+02_Out/E02_T011_S002_R2_ID.fastq.gz  FASTQ   DNA     15,154    121,232        8        8        8   4   8   4        0    8   98.44   95.35
+02_Out/E02_T011_S003_R1_ID.fastq.gz  FASTQ   DNA    424,581  3,396,648        8        8        8   4   8   4        0    8      99   97.28
+02_Out/E02_T011_S003_R2_ID.fastq.gz  FASTQ   DNA        157      1,256        8        8        8   4   8   4        0    8   98.81   96.82
+02_Out/E02_T011_S004_R1_ID.fastq.gz  FASTQ   DNA     15,312    122,496        8        8        8   4   8   4        0    8   98.06   94.58
+02_Out/E02_T011_S004_R2_ID.fastq.gz  FASTQ   DNA    425,686  3,405,488        8        8        8   4   8   4        0    8   99.54   98.59
+02_Out/E02_T011_S005_R1_ID.fastq.gz  FASTQ   DNA     15,312    122,496        8        8        8   4   8   4        0    8   98.06   94.58
+02_Out/E02_T011_S005_R2_ID.fastq.gz  FASTQ   DNA     15,154    121,232        8        8        8   4   8   4        0    8   98.44   95.35
+02_Out/E02_T011_S006_R1_ID.fastq.gz  FASTQ   DNA     15,312    122,496        8        8        8   4   8   4        0    8   98.06   94.58
+02_Out/E02_T011_S006_R2_ID.fastq.gz  FASTQ   DNA        157      1,256        8        8        8   4   8   4        0    8   98.81   96.82
+02_Out/E02_T011_S007_R1_ID.fastq.gz  FASTQ   DNA        479      3,832        8        8        8   4   8   4        0    8   97.42   93.48
+02_Out/E02_T011_S007_R2_ID.fastq.gz  FASTQ   DNA    425,686  3,405,488        8        8        8   4   8   4        0    8   99.54   98.59
+02_Out/E02_T011_S008_R1_ID.fastq.gz  FASTQ   DNA        479      3,832        8        8        8   4   8   4        0    8   97.42   93.48
+02_Out/E02_T011_S008_R2_ID.fastq.gz  FASTQ   DNA     15,154    121,232        8        8        8   4   8   4        0    8   98.44   95.35
+02_Out/E02_T011_S009_R1_ID.fastq.gz  FASTQ   DNA        479      3,832        8        8        8   4   8   4        0    8   97.42   93.48
+02_Out/E02_T011_S009_R2_ID.fastq.gz  FASTQ   DNA        157      1,256        8        8        8   4   8   4        0    8   98.81   96.82
+02_Out/E02_T012_S001_R1_ID.fastq.gz  FASTQ   DNA    334,550  2,676,400        8        8        8   4   8   4        0    8      99    97.3
+02_Out/E02_T012_S001_R2_ID.fastq.gz  FASTQ   DNA    335,358  2,682,864        8        8        8   4   8   4        0    8   99.61   98.74
+02_Out/E02_T012_S002_R1_ID.fastq.gz  FASTQ   DNA    334,550  2,676,400        8        8        8   4   8   4        0    8      99    97.3
+02_Out/E02_T012_S002_R2_ID.fastq.gz  FASTQ   DNA         93        744        8        8        8   4   8   4        0    8   97.72   95.16
+02_Out/E02_T012_S003_R1_ID.fastq.gz  FASTQ   DNA    334,550  2,676,400        8        8        8   4   8   4        0    8      99    97.3
+02_Out/E02_T012_S003_R2_ID.fastq.gz  FASTQ   DNA      5,954     47,632        8        8        8   4   8   4        0    8   98.07   94.12
+02_Out/E02_T012_S004_R1_ID.fastq.gz  FASTQ   DNA        275      2,200        8        8        8   4   8   4        0    8      98   93.68
+02_Out/E02_T012_S004_R2_ID.fastq.gz  FASTQ   DNA    335,358  2,682,864        8        8        8   4   8   4        0    8   99.61   98.74
+02_Out/E02_T012_S005_R1_ID.fastq.gz  FASTQ   DNA        275      2,200        8        8        8   4   8   4        0    8      98   93.68
+02_Out/E02_T012_S005_R2_ID.fastq.gz  FASTQ   DNA         93        744        8        8        8   4   8   4        0    8   97.72   95.16
+02_Out/E02_T012_S006_R1_ID.fastq.gz  FASTQ   DNA        275      2,200        8        8        8   4   8   4        0    8      98   93.68
+02_Out/E02_T012_S006_R2_ID.fastq.gz  FASTQ   DNA      5,954     47,632        8        8        8   4   8   4        0    8   98.07   94.12
+02_Out/E02_T012_S007_R1_ID.fastq.gz  FASTQ   DNA      6,146     49,168        8        8        8   4   8   4        0    8   96.59   92.02
+02_Out/E02_T012_S007_R2_ID.fastq.gz  FASTQ   DNA    335,358  2,682,864        8        8        8   4   8   4        0    8   99.61   98.74
+02_Out/E02_T012_S008_R1_ID.fastq.gz  FASTQ   DNA      6,146     49,168        8        8        8   4   8   4        0    8   96.59   92.02
+02_Out/E02_T012_S008_R2_ID.fastq.gz  FASTQ   DNA         93        744        8        8        8   4   8   4        0    8   97.72   95.16
+02_Out/E02_T012_S009_R1_ID.fastq.gz  FASTQ   DNA      6,146     49,168        8        8        8   4   8   4        0    8   96.59   92.02
+02_Out/E02_T012_S009_R2_ID.fastq.gz  FASTQ   DNA      5,954     47,632        8        8        8   4   8   4        0    8   98.07   94.12

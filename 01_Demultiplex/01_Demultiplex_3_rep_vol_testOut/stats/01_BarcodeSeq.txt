@@ -1,0 +1,17 @@
+file                                                    format  type  num_seqs    sum_len  min_len  avg_len  max_len  Q1  Q2  Q3  sum_gap  N50  Q20(%)  Q30(%)
+01_Out/eDNA-Time1-S001_S1_L001_R1_001_index.fastq.gz    FASTQ   DNA    582,382  4,659,056        8        8        8   4   8   4        0    8   97.93    95.1
+01_Out/eDNA-Time1-S001_S1_L001_R2_001_index.fastq.gz    FASTQ   DNA    582,382  4,659,056        8        8        8   4   8   4        0    8   97.67   94.69
+01_Out/eDNA-Time2-S002_S2_L001_R1_001_index.fastq.gz    FASTQ   DNA    677,462  5,419,696        8        8        8   4   8   4        0    8   97.45   94.34
+01_Out/eDNA-Time2-S002_S2_L001_R2_001_index.fastq.gz    FASTQ   DNA    677,462  5,419,696        8        8        8   4   8   4        0    8   96.98   93.68
+01_Out/eDNA-Time4-S003_S3_L001_R1_001_index.fastq.gz    FASTQ   DNA    476,545  3,812,360        8        8        8   4   8   4        0    8   97.97   95.21
+01_Out/eDNA-Time4-S003_S3_L001_R2_001_index.fastq.gz    FASTQ   DNA    476,545  3,812,360        8        8        8   4   8   4        0    8   97.69   94.75
+01_Out/eDNA-Time8-S004_S4_L001_R1_001_index.fastq.gz    FASTQ   DNA    535,659  4,285,272        8        8        8   4   8   4        0    8   97.72   94.77
+01_Out/eDNA-Time8-S004_S4_L001_R2_001_index.fastq.gz    FASTQ   DNA    535,659  4,285,272        8        8        8   4   8   4        0    8   97.26   94.02
+01_Out/eDNA-Volume1-S005_S5_L001_R1_001_index.fastq.gz  FASTQ   DNA    344,938  2,759,504        8        8        8   4   8   4        0    8   97.17   93.81
+01_Out/eDNA-Volume1-S005_S5_L001_R2_001_index.fastq.gz  FASTQ   DNA    344,938  2,759,504        8        8        8   4   8   4        0    8   96.98   93.53
+01_Out/eDNA-Volume2-S006_S6_L001_R1_001_index.fastq.gz  FASTQ   DNA    574,668  4,597,344        8        8        8   4   8   4        0    8   97.26   93.89
+01_Out/eDNA-Volume2-S006_S6_L001_R2_001_index.fastq.gz  FASTQ   DNA    574,668  4,597,344        8        8        8   4   8   4        0    8   96.97   93.33
+01_Out/eDNA-Volume4-S007_S7_L001_R1_001_index.fastq.gz  FASTQ   DNA    518,949  4,151,592        8        8        8   4   8   4        0    8   97.36   94.13
+01_Out/eDNA-Volume4-S007_S7_L001_R2_001_index.fastq.gz  FASTQ   DNA    518,949  4,151,592        8        8        8   4   8   4        0    8   97.05   93.53
+01_Out/eDNA-Volume8-S008_S8_L001_R1_001_index.fastq.gz  FASTQ   DNA    335,448  2,683,584        8        8        8   4   8   4        0    8   97.34   94.08
+01_Out/eDNA-Volume8-S008_S8_L001_R2_001_index.fastq.gz  FASTQ   DNA    335,448  2,683,584        8        8        8   4   8   4        0    8   97.31      94

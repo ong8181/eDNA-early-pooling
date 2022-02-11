@@ -1,0 +1,50 @@
+R version 4.1.2 (2021-11-01)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur 11.6
+
+Matrix products: default
+LAPACK: /Library/Frameworks/R.framework/Versions/4.1/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] forcats_0.5.1               stringr_1.4.0              
+ [3] dplyr_1.0.7                 purrr_0.3.4                
+ [5] readr_2.0.2                 tidyr_1.1.4                
+ [7] tibble_3.1.6                ggplot2_3.3.5              
+ [9] tidyverse_1.3.1             ShortRead_1.52.0           
+[11] GenomicAlignments_1.30.0    SummarizedExperiment_1.24.0
+[13] Biobase_2.54.0              MatrixGenerics_1.6.0       
+[15] matrixStats_0.61.0          Rsamtools_2.10.0           
+[17] GenomicRanges_1.46.0        Biostrings_2.62.0          
+[19] GenomeInfoDb_1.30.0         XVector_0.34.0             
+[21] IRanges_2.28.0              S4Vectors_0.32.2           
+[23] BiocParallel_1.28.0         BiocGenerics_0.40.0        
+[25] dada2_1.22.0                Rcpp_1.0.7                 
+
+loaded via a namespace (and not attached):
+ [1] httr_1.4.2             jsonlite_1.7.2         modelr_0.1.8          
+ [4] RcppParallel_5.1.4     assertthat_0.2.1       latticeExtra_0.6-29   
+ [7] GenomeInfoDbData_1.2.7 cellranger_1.1.0       pillar_1.6.4          
+[10] backports_1.3.0        lattice_0.20-45        glue_1.5.0            
+[13] digest_0.6.28          RColorBrewer_1.1-2     rvest_1.0.2           
+[16] colorspace_2.0-2       Matrix_1.3-4           plyr_1.8.6            
+[19] pkgconfig_2.0.3        broom_0.7.10           haven_2.4.3           
+[22] zlibbioc_1.40.0        scales_1.1.1           jpeg_0.1-9            
+[25] tzdb_0.2.0             farver_2.1.0           generics_0.1.1        
+[28] ellipsis_0.3.2         withr_2.4.2            cli_3.1.0             
+[31] magrittr_2.0.1         crayon_1.4.2           readxl_1.3.1          
+[34] fs_1.5.0               fansi_0.5.0            xml2_1.3.2            
+[37] hwriter_1.3.2          tools_4.1.2            hms_1.1.1             
+[40] lifecycle_1.0.1        munsell_0.5.0          reprex_2.0.1          
+[43] DelayedArray_0.20.0    compiler_4.1.2         rlang_0.4.12          
+[46] grid_4.1.2             RCurl_1.98-1.5         rstudioapi_0.13       
+[49] labeling_0.4.2         bitops_1.0-7           gtable_0.3.0          
+[52] DBI_1.1.1              reshape2_1.4.4         R6_2.5.1              
+[55] lubridate_1.8.0        utf8_1.2.2             stringi_1.7.5         
+[58] parallel_4.1.2         vctrs_0.3.8            png_0.1-7             
+[61] dbplyr_2.1.1           tidyselect_1.1.1      

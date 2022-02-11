@@ -1,0 +1,9 @@
+file                                                                        format  type  num_seqs      sum_len  min_len  avg_len  max_len    Q1   Q2    Q3  sum_gap  N50  Q20(%)  Q30(%)
+../../seqdata_raw/3_rep_vol_test/eDNA-Time1-S001_S1_L001_R1_001.fastq.gz    FASTQ   DNA    582,382   89,104,446      153      153      153  76.5  153  76.5        0  153   96.66   91.41
+../../seqdata_raw/3_rep_vol_test/eDNA-Time2-S002_S2_L001_R1_001.fastq.gz    FASTQ   DNA    677,462  103,651,686      153      153      153  76.5  153  76.5        0  153   95.95   90.24
+../../seqdata_raw/3_rep_vol_test/eDNA-Time4-S003_S3_L001_R1_001.fastq.gz    FASTQ   DNA    476,545   72,911,385      153      153      153  76.5  153  76.5        0  153   96.46   90.97
+../../seqdata_raw/3_rep_vol_test/eDNA-Time8-S004_S4_L001_R1_001.fastq.gz    FASTQ   DNA    535,659   81,955,827      153      153      153  76.5  153  76.5        0  153   96.38   90.81
+../../seqdata_raw/3_rep_vol_test/eDNA-Volume1-S005_S5_L001_R1_001.fastq.gz  FASTQ   DNA    344,938   52,775,514      153      153      153  76.5  153  76.5        0  153   96.17   90.52
+../../seqdata_raw/3_rep_vol_test/eDNA-Volume2-S006_S6_L001_R1_001.fastq.gz  FASTQ   DNA    574,668   87,924,204      153      153      153  76.5  153  76.5        0  153   95.74   89.54
+../../seqdata_raw/3_rep_vol_test/eDNA-Volume4-S007_S7_L001_R1_001.fastq.gz  FASTQ   DNA    518,949   79,399,197      153      153      153  76.5  153  76.5        0  153   96.14   90.42
+../../seqdata_raw/3_rep_vol_test/eDNA-Volume8-S008_S8_L001_R1_001.fastq.gz  FASTQ   DNA    335,448   51,323,544      153      153      153  76.5  153  76.5        0  153   95.91   89.81

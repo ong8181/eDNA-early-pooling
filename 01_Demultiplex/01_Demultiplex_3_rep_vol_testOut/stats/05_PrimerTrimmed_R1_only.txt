@@ -1,0 +1,97 @@
+file                                      format  type  num_seqs     sum_len  min_len  avg_len  max_len   Q1   Q2   Q3  sum_gap  N50  Q20(%)  Q30(%)
+05_Out/E03_T001_S001_trimmed_R1.fastq.gz  FASTQ   DNA        312      38,429      120    123.2      124  121  124  124        0  124    97.5   93.42
+05_Out/E03_T001_S002_trimmed_R1.fastq.gz  FASTQ   DNA     75,383   9,250,667      120    122.7      145  121  124  124        0  124   97.21   92.69
+05_Out/E03_T001_S003_trimmed_R1.fastq.gz  FASTQ   DNA     88,000  10,791,610      120    122.6      145  121  124  124        0  124   95.95   90.53
+05_Out/E03_T001_S004_trimmed_R1.fastq.gz  FASTQ   DNA    125,537  15,339,409      120    122.2      145  121  121  124        0  121   96.54    91.7
+05_Out/E03_T001_S005_trimmed_R1.fastq.gz  FASTQ   DNA     99,452  12,181,483      118    122.5      145  121  124  124        0  124   97.28   92.91
+05_Out/E03_T001_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T001_S007_trimmed_R1.fastq.gz  FASTQ   DNA     39,274   4,870,666      120      124      145  124  124  124        0  124   97.45   93.15
+05_Out/E03_T001_S008_trimmed_R1.fastq.gz  FASTQ   DNA     12,039   1,493,344      120      124      145  124  124  124        0  124   96.99    91.9
+05_Out/E03_T001_S009_trimmed_R1.fastq.gz  FASTQ   DNA     57,332   7,110,453      120      124      145  124  124  124        0  124   97.72   93.62
+05_Out/E03_T001_S010_trimmed_R1.fastq.gz  FASTQ   DNA     35,774   4,434,014        0    123.9      145  124  124  124        0  124   96.97   92.14
+05_Out/E03_T001_S011_trimmed_R1.fastq.gz  FASTQ   DNA     18,245   2,263,343      120    124.1      145  124  124  124        0  124   97.31   92.78
+05_Out/E03_T001_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T002_S001_trimmed_R1.fastq.gz  FASTQ   DNA     82,755  10,133,144      120    122.4      145  121  121  124        0  121   96.45   91.35
+05_Out/E03_T002_S002_trimmed_R1.fastq.gz  FASTQ   DNA     18,247   2,246,159      120    123.1      145  121  124  124        0  124   96.58   91.58
+05_Out/E03_T002_S003_trimmed_R1.fastq.gz  FASTQ   DNA     36,137   4,419,170      120    122.3      145  121  121  124        0  121   96.35   91.39
+05_Out/E03_T002_S004_trimmed_R1.fastq.gz  FASTQ   DNA     32,754   3,986,529        0    121.7      145  121  121  121        0  121   95.49   89.62
+05_Out/E03_T002_S005_trimmed_R1.fastq.gz  FASTQ   DNA     37,652   4,620,406      119    122.7      145  121  124  124        0  124   97.17   92.47
+05_Out/E03_T002_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T002_S007_trimmed_R1.fastq.gz  FASTQ   DNA      4,333     537,552      123    124.1      145  124  124  124        0  124    96.1   90.36
+05_Out/E03_T002_S008_trimmed_R1.fastq.gz  FASTQ   DNA      6,197     768,808      123    124.1      145  124  124  124        0  124   96.76   91.68
+05_Out/E03_T002_S009_trimmed_R1.fastq.gz  FASTQ   DNA     70,446   8,737,997      120      124      145  124  124  124        0  124   96.99   92.35
+05_Out/E03_T002_S010_trimmed_R1.fastq.gz  FASTQ   DNA      3,288     408,030      123    124.1      145  124  124  124        0  124   95.86   89.93
+05_Out/E03_T002_S011_trimmed_R1.fastq.gz  FASTQ   DNA      3,229     400,587      121    124.1      145  124  124  124        0  124   95.57   89.21
+05_Out/E03_T002_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T003_S001_trimmed_R1.fastq.gz  FASTQ   DNA     98,839  12,102,955      119    122.5      145  121  121  124        0  121   96.55   91.77
+05_Out/E03_T003_S002_trimmed_R1.fastq.gz  FASTQ   DNA    107,853  13,270,470      119      123      145  121  124  124        0  124   96.89      92
+05_Out/E03_T003_S003_trimmed_R1.fastq.gz  FASTQ   DNA     85,626  10,529,403      119      123      145  121  124  124        0  124   95.41   89.58
+05_Out/E03_T003_S004_trimmed_R1.fastq.gz  FASTQ   DNA    167,059  20,499,500      119    122.7      145  121  124  124        0  124   96.09   90.96
+05_Out/E03_T003_S005_trimmed_R1.fastq.gz  FASTQ   DNA     74,729   9,165,990       17    122.7      145  121  124  124        0  124   97.14    92.8
+05_Out/E03_T003_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T003_S007_trimmed_R1.fastq.gz  FASTQ   DNA     20,139   2,498,008      123      124      145  124  124  124        0  124   97.16   92.24
+05_Out/E03_T003_S008_trimmed_R1.fastq.gz  FASTQ   DNA     22,565   2,801,058      120    124.1      145  124  124  124        0  124   96.74   91.57
+05_Out/E03_T003_S009_trimmed_R1.fastq.gz  FASTQ   DNA     30,914   3,835,459      123    124.1      145  124  124  124        0  124   96.97   92.54
+05_Out/E03_T003_S010_trimmed_R1.fastq.gz  FASTQ   DNA      8,751   1,085,762      120    124.1      145  124  124  124        0  124   96.57   90.96
+05_Out/E03_T003_S011_trimmed_R1.fastq.gz  FASTQ   DNA     16,661   2,067,574      120    124.1      145  124  124  124        0  124   97.01   92.12
+05_Out/E03_T003_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T004_S001_trimmed_R1.fastq.gz  FASTQ   DNA     27,543   3,382,649      120    122.8      145  121  124  124        0  124   96.43   91.12
+05_Out/E03_T004_S002_trimmed_R1.fastq.gz  FASTQ   DNA     33,774   4,153,371      119      123      145  121  124  124        0  124   96.71   91.83
+05_Out/E03_T004_S003_trimmed_R1.fastq.gz  FASTQ   DNA     16,251   1,976,408      120    121.6      145  121  121  121        0  121    96.3   91.42
+05_Out/E03_T004_S004_trimmed_R1.fastq.gz  FASTQ   DNA     41,752   5,123,497      120    122.7      145  121  124  124        0  124   95.46   89.48
+05_Out/E03_T004_S005_trimmed_R1.fastq.gz  FASTQ   DNA     46,909   5,786,463      116    123.4      145  124  124  124        0  124   97.06   92.14
+05_Out/E03_T004_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T004_S007_trimmed_R1.fastq.gz  FASTQ   DNA     75,130   9,321,313      120    124.1      145  124  124  124        0  124   96.08   90.35
+05_Out/E03_T004_S008_trimmed_R1.fastq.gz  FASTQ   DNA     65,279   8,100,329      120    124.1      145  124  124  124        0  124   96.33   91.01
+05_Out/E03_T004_S009_trimmed_R1.fastq.gz  FASTQ   DNA     81,351  10,092,847      120    124.1      145  124  124  124        0  124   96.94    92.1
+05_Out/E03_T004_S010_trimmed_R1.fastq.gz  FASTQ   DNA     79,074   9,811,294      120    124.1      145  124  124  124        0  124   95.87   89.85
+05_Out/E03_T004_S011_trimmed_R1.fastq.gz  FASTQ   DNA     57,171   7,095,185      120    124.1      145  124  124  124        0  124    95.1   88.42
+05_Out/E03_T004_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T005_S001_trimmed_R1.fastq.gz  FASTQ   DNA     52,055   6,392,204      119    122.8      145  121  124  124        0  124    96.8   91.98
+05_Out/E03_T005_S002_trimmed_R1.fastq.gz  FASTQ   DNA     48,035   5,894,575        0    122.7      145  121  124  124        0  124   96.94   92.16
+05_Out/E03_T005_S003_trimmed_R1.fastq.gz  FASTQ   DNA     87,394  10,737,067        0    122.9      145  121  124  124        0  124   95.69   89.96
+05_Out/E03_T005_S004_trimmed_R1.fastq.gz  FASTQ   DNA     78,519   9,617,187      119    122.5      145  121  121  124        0  121   96.48   91.59
+05_Out/E03_T005_S005_trimmed_R1.fastq.gz  FASTQ   DNA     55,172   6,774,874      120    122.8      145  121  124  124        0  124   97.28    92.8
+05_Out/E03_T005_S006_trimmed_R1.fastq.gz  FASTQ   DNA         64       7,937      124      124      125  124  124  124        0  124   97.01   91.75
+05_Out/E03_T005_S007_trimmed_R1.fastq.gz  FASTQ   DNA      9,651   1,196,286      120      124      145  124  124  124        0  124   97.36   92.89
+05_Out/E03_T005_S008_trimmed_R1.fastq.gz  FASTQ   DNA     13,099   1,624,762      123      124      145  124  124  124        0  124   97.02   91.94
+05_Out/E03_T005_S009_trimmed_R1.fastq.gz  FASTQ   DNA     46,222   5,732,534      121      124      145  124  124  124        0  124   97.42   92.99
+05_Out/E03_T005_S010_trimmed_R1.fastq.gz  FASTQ   DNA     44,419   5,509,335      120      124      145  124  124  124        0  124   96.76   91.65
+05_Out/E03_T005_S011_trimmed_R1.fastq.gz  FASTQ   DNA     16,433   2,038,543      120    124.1      145  124  124  124        0  124   97.19   92.51
+05_Out/E03_T005_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T006_S001_trimmed_R1.fastq.gz  FASTQ   DNA     64,609   7,914,499      119    122.5      145  121  121  124        0  121   96.57   91.55
+05_Out/E03_T006_S002_trimmed_R1.fastq.gz  FASTQ   DNA    122,900  15,081,982       68    122.7      145  121  124  124        0  124   96.63   91.74
+05_Out/E03_T006_S003_trimmed_R1.fastq.gz  FASTQ   DNA     68,869   8,482,343      120    123.2      145  121  124  124        0  124   96.48   91.41
+05_Out/E03_T006_S004_trimmed_R1.fastq.gz  FASTQ   DNA     50,032   6,121,436      120    122.4      145  121  121  124        0  121   95.49   89.64
+05_Out/E03_T006_S005_trimmed_R1.fastq.gz  FASTQ   DNA     51,722   6,344,635      120    122.7      145  121  124  124        0  124   97.19   92.49
+05_Out/E03_T006_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T006_S007_trimmed_R1.fastq.gz  FASTQ   DNA     16,980   2,106,304      123      124      145  124  124  124        0  124   96.38   90.96
+05_Out/E03_T006_S008_trimmed_R1.fastq.gz  FASTQ   DNA     12,934   1,604,327      120      124      145  124  124  124        0  124   96.52   91.38
+05_Out/E03_T006_S009_trimmed_R1.fastq.gz  FASTQ   DNA     60,420   7,493,726      120      124      145  124  124  124        0  124   97.24   92.63
+05_Out/E03_T006_S010_trimmed_R1.fastq.gz  FASTQ   DNA     24,803   3,076,680      120      124      145  124  124  124        0  124    96.2   90.58
+05_Out/E03_T006_S011_trimmed_R1.fastq.gz  FASTQ   DNA      9,668   1,199,138      120      124      145  124  124  124        0  124   95.65   89.56
+05_Out/E03_T006_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T007_S001_trimmed_R1.fastq.gz  FASTQ   DNA     38,470   4,717,086        0    122.6      145  121  124  124        0  124   96.74   91.91
+05_Out/E03_T007_S002_trimmed_R1.fastq.gz  FASTQ   DNA     38,547   4,723,074      119    122.5      145  121  124  124        0  124   97.09   92.44
+05_Out/E03_T007_S003_trimmed_R1.fastq.gz  FASTQ   DNA     67,922   8,339,627       22    122.8      145  121  124  124        0  124   95.66   89.98
+05_Out/E03_T007_S004_trimmed_R1.fastq.gz  FASTQ   DNA    104,804  12,875,014        0    122.8      145  121  124  124        0  124   96.38   91.34
+05_Out/E03_T007_S005_trimmed_R1.fastq.gz  FASTQ   DNA     81,385   9,970,657      119    122.5      145  121  121  124        0  122   97.19   92.71
+05_Out/E03_T007_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T007_S007_trimmed_R1.fastq.gz  FASTQ   DNA     14,254   1,767,951      120      124      145  124  124  124        0  124   97.05   92.29
+05_Out/E03_T007_S008_trimmed_R1.fastq.gz  FASTQ   DNA     48,009   5,955,679      120    124.1      145  124  124  124        0  124   96.87   91.55
+05_Out/E03_T007_S009_trimmed_R1.fastq.gz  FASTQ   DNA     59,370   7,361,006      120      124      145  124  124  124        0  124   97.17   92.36
+05_Out/E03_T007_S010_trimmed_R1.fastq.gz  FASTQ   DNA     48,379   5,998,546        0      124      145  124  124  124        0  124    96.8   91.62
+05_Out/E03_T007_S011_trimmed_R1.fastq.gz  FASTQ   DNA      4,184     519,191      123    124.1      145  124  124  124        0  124    97.1   92.28
+05_Out/E03_T007_S012_trimmed_R1.fastq.gz  FASTQ   DNA         13       1,613      124    124.1      125  124  124  124        0  124   97.27   93.18
+05_Out/E03_T008_S001_trimmed_R1.fastq.gz  FASTQ   DNA     26,620   3,268,212      120    122.8      145  121  124  124        0  124    96.4   91.12
+05_Out/E03_T008_S002_trimmed_R1.fastq.gz  FASTQ   DNA     49,054   6,019,143      119    122.7      145  121  124  124        0  124    96.6   91.61
+05_Out/E03_T008_S003_trimmed_R1.fastq.gz  FASTQ   DNA     28,184   3,456,619      120    122.6      145  121  124  124        0  124   96.32   91.16
+05_Out/E03_T008_S004_trimmed_R1.fastq.gz  FASTQ   DNA     24,551   3,006,200      120    122.4      145  121  121  124        0  121   95.52   89.59
+05_Out/E03_T008_S005_trimmed_R1.fastq.gz  FASTQ   DNA     30,343   3,724,324      120    122.7      145  121  124  124        0  124   97.12   92.33
+05_Out/E03_T008_S006_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
+05_Out/E03_T008_S007_trimmed_R1.fastq.gz  FASTQ   DNA     27,732   3,440,195      120    124.1      145  124  124  124        0  124   96.07   90.11
+05_Out/E03_T008_S008_trimmed_R1.fastq.gz  FASTQ   DNA     40,361   5,006,316      120      124      145  124  124  124        0  124    96.4   90.98
+05_Out/E03_T008_S009_trimmed_R1.fastq.gz  FASTQ   DNA     35,894   4,452,502       67      124      145  124  124  124        0  124   97.14    92.2
+05_Out/E03_T008_S010_trimmed_R1.fastq.gz  FASTQ   DNA     22,975   2,849,928      120      124      145  124  124  124        0  124   95.86   89.88
+05_Out/E03_T008_S011_trimmed_R1.fastq.gz  FASTQ   DNA     29,138   3,614,825      123    124.1      145  124  124  124        0  124   95.22   88.54
+05_Out/E03_T008_S012_trimmed_R1.fastq.gz                       0           0        0        0        0    0    0    0        0    0       0       0
