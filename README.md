@@ -1,6 +1,6 @@
 # Analysis codes for Ushio et al. (2022) "An efficient early-pooling protocol for environmental DNA metabarcoding" _bioRxiv_
 This repository contains analysis codes to reproduce the results in Ushio et al. (2022)
-_bioRxiv_.
+_bioRxiv_ https://doi.org/10.1101/2022.02.15.480497.
 
 :heavy_exclamation_mark: If you want to perform the analyses from the demultiplexing step using the original FASTQ files, you should download FASTQ files from DDBJ (see the section "Downloading sequence data" below). Note that the FASTQ file in DDBJ are renamed to follow DDBJ instructions. The FASTQ files should be re-renamed by executing the commands in the section "Downloading sequence data".
 
