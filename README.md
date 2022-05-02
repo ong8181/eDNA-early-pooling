@@ -49,6 +49,8 @@ see text files in `00_SessionInfo/`
 # Downloading sequence data
 Demultiplexed FASTQ files are available in DDBJ DRA (accession number = DRA013399). If you want to reproduce the analysis, place the downloaded FASTQ files in `seqdata_demultiplexed` folder using the following commands. You can re-run the analysis from DADA2 analysis.
 
+\*Each sample folder usually contains two FASTQ files (paired-end files). However, four sample folders (DRX333539, DRX333586, DRX333596, and DRX333675) contain three FASTQ files. The third FASTQ file contains sequences of which paired-sequences were not found, which can simply be discarded when you want to reproduce the analyses.
+
 ```
 # Go to the repository folder
 cd eDNA-early-pooling
