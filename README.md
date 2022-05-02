@@ -47,7 +47,7 @@ see text files in `00_SessionInfo/`
 
 
 # Downloading sequence data
-Demultiplexed FASTQ files are available in DDBJ DRA (accession number = DRA0013399). If you want to reproduce the analysis, place the downloaded FASTQ files in `seqdata_demultiplexed` folder using the following commands. You can re-run the analysis from DADA2 analysis.
+Demultiplexed FASTQ files are available in DDBJ DRA (accession number = DRA013399). If you want to reproduce the analysis, place the downloaded FASTQ files in `seqdata_demultiplexed` folder using the following commands. You can re-run the analysis from DADA2 analysis.
 
 ```
 # Go to the repository folder
