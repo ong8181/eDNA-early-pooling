@@ -1,7 +1,11 @@
 ####
 #### Format figures for eDNA-seq
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "FigCode") setwd("FigCode")
 
 # Load libraries
 ## For general
@@ -39,7 +43,6 @@ fig_13_rareotu <- readRDS(paste0(fig_dir, "13_1_Fig_RareOTUs.obj"))
 # Experiment 3
 # <---------------------------------------------> #
 ## Sea_Nagahama
-#test_cat1 <- fig_exp3_divbox[[2]]$data$test_category
 test_cat1 <- c(rep("1-rep.",4), rep("1-µl",5), rep("2-rep.",5),rep("2-µl",5),
                rep("4-rep.",5), rep("4-µl",5), rep("8-rep.",5),rep("8-µl",5))
 fig_exp3_divbox[[2]]$data$test_name[fig_exp3_divbox[[2]]$data$test_name == "Replicate_test"] <- "Replicate test"
@@ -49,7 +52,6 @@ fig_exp3_divbox[[2]]$layers[[1]] <- fig_exp3_divbox[[2]]$layers[[2]] <- NULL
 ### Format figure
 g1 <- fig_exp3_divbox[[2]] +
   geom_boxplot(width = 0.5, alpha = 0.5, outlier.shape = NA, fill = NA) +
-  #geom_boxplot(width = 0.5, alpha = 0.5, outlier.shape = NA) +
   geom_jitter(width = 0.1, height = 0, alpha = 0.65) +
   facet_wrap(. ~ test_name, scales = "free_x") +
   labs(title = "Sea_Nagahama",
@@ -64,7 +66,6 @@ summary(glm(value ~ test_category, data = g1$data %>% filter(reaction_scale == 4
 summary(glm(value ~ test_category, data = g1$data %>% filter(reaction_scale == 8), family = poisson(link = "log")))
 
 ## STD_Mix
-#test_cat2 <- fig_exp3_divbox[[4]]$data$test_category
 test_cat2 <- c(rep("1-rep.",5), rep("1-µl",5), rep("2-rep.",5),rep("2-µl",5),
                rep("4-rep.",5), rep("4-µl",5), rep("8-rep.",5),rep("8-µl",5))
 fig_exp3_divbox[[4]]$data$test_name[fig_exp3_divbox[[4]]$data$test_name == "Replicate_test"] <- "Replicate test"
@@ -147,7 +148,7 @@ g5 <- fig_13_rareotu[[1]] + scale_x_discrete(labels = c("Detected\nOTUs\nin 1-re
                                                         "Newly\ndetected\nOTUs\nin 4-rep.",
                                                         "Newly\ndetected\nOTUs\nin 8-rep.")) +
   scale_color_startrek(name = "Treatment", labels = c("1-rep.", "2-rep.", "4-rep.", "8-rep.")) + 
-  ggtitle(NULL) +
+  ggtitle("Sea_Nagahama, Replication test") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = 1))
 ### Volume test
 g6 <- fig_13_rareotu[[3]] + scale_x_discrete(labels = c("Detected\nOTUs\nin 1-µl",
@@ -155,7 +156,7 @@ g6 <- fig_13_rareotu[[3]] + scale_x_discrete(labels = c("Detected\nOTUs\nin 1-µ
                                                         "Newly\ndetected\nOTUs\nin 4-µl",
                                                         "Newly\ndetected\nOTUs\nin 8-µl")) +
   scale_color_startrek(name = "Treatment", labels = c("1-µl", "2-µl", "4-µl", "8-µl")) + 
-  ggtitle(NULL) +
+  ggtitle("Sea_Nagahama, Volume test") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = 1))
 
 

@@ -1,8 +1,11 @@
 ####
 #### Rarefying sequence depth and compare diversity
-#### 2022.01.21 Ushio
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "10_Exp3_repvol") setwd("10_Exp3_repvol")
 
 # Set random seeds (for reproduction)
 ran.seed <- 1234
@@ -12,9 +15,8 @@ set.seed(ran.seed)
 library(tidyverse); packageVersion("tidyverse") # 1.3.1, 2021.10.16
 library(phyloseq); packageVersion("phyloseq") # 1.38.0, 2021.11.18
 library(cowplot); packageVersion("cowplot") # 1.1.1, 2021.6.13
-library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.6.13
+library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.3, 2021.6.13
 theme_set(theme_cowplot())
-#source("../functions_R/F02_HelperFunctions.R") # Helper function for visualization
 get_palette <- colorRampPalette(brewer.pal(8, "Paired"))
 
 # Generate output folder

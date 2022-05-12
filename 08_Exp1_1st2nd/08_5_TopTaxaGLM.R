@@ -1,7 +1,12 @@
 ####
-#### No.8.4 Analyzing top taxa
+#### GLM for top taxa
+#### 2021.12.27 Ushio
+#### 2022.05.05 Ushio, revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "08_Exp1_1st2nd") setwd("08_Exp1_1st2nd")
 
 # Set random seeds (for reproduction)
 ran.seed <- 1234
@@ -11,12 +16,12 @@ set.seed(ran.seed)
 library(tidyverse); packageVersion("tidyverse") # 1.3.1, 2021.10.16
 library(phyloseq); packageVersion("phyloseq") # 1.38.0, 2021.11.18
 library(cowplot); packageVersion("cowplot") # 1.1.1, 2021.6.13
+#library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.6.13
 theme_set(theme_cowplot())
 
 # Generate output folder
 od <- basename(rstudioapi::getSourceEditorContext()$path)
 (output_folder <- paste0(str_sub(od, end = -3), "Out")); rm(od)
-dir.create(output_folder)
 
 
 # ----------------------------------------------- #
@@ -42,10 +47,10 @@ sample_sums(ps_fish1); sample_sums(ps_fish2); sample_sums(ps_fish3); sample_sums
 # Define function
 add_reads <- function (list_df) {
   list_df$reads <- NA
-  list_df$reads[list_df$site == "Sea_Nagahama"] <- list_df$top_prop[list_df$site == "Sea_Nagahama"] * unique(sample_sums(ps_fish1))
-  list_df$reads[list_df$site == "Sea_Otomi"] <- list_df$top_prop[list_df$site == "Sea_Otomi"] * unique(sample_sums(ps_fish2))
-  list_df$reads[list_df$site == "River_Seta"] <- list_df$top_prop[list_df$site == "River_Seta"] * unique(sample_sums(ps_fish3))
-  list_df$reads[list_df$site == "STD_Mix"] <- list_df$top_prop[list_df$site == "STD_Mix"] * unique(sample_sums(ps_fish4))
+  list_df$reads[list_df$site == "Sea_Nagahama"] <- list_df$top_prop[list_df$site == "Sea_Nagahama"] * sample_sums(ps_fish1)
+  list_df$reads[list_df$site == "Sea_Otomi"] <- list_df$top_prop[list_df$site == "Sea_Otomi"] * sample_sums(ps_fish2)
+  list_df$reads[list_df$site == "River_Seta"] <- list_df$top_prop[list_df$site == "River_Seta"] * sample_sums(ps_fish3)
+  list_df$reads[list_df$site == "STD_Mix"] <- list_df$top_prop[list_df$site == "STD_Mix"] * sample_sums(ps_fish4)
   return(list_df)
 }
 
@@ -81,7 +86,7 @@ TukeyHSD(aov(reads ~ libprep, data = top_list1_seaO)) # N.S.
 TukeyHSD(aov(reads ~ libprep, data = top_list1_rivS)) # N.S.
 TukeyHSD(aov(reads ~ libprep, data = top_list1_stdM)) # N.S.
 ## Top 2
-TukeyHSD(aov(reads ~ libprep, data = top_list2_seaN)) # 2ndKAPA - 1stPlat: P < 0.01 (0.0026), 2ndPlat - 1stPlat; P = 0.080
+TukeyHSD(aov(reads ~ libprep, data = top_list2_seaN)) # 2ndKAPA - 1stPlat: P < 0.01 (0.00206), 2ndPlat - 1stPlat; P = 0.068
 TukeyHSD(aov(reads ~ libprep, data = top_list2_seaO)) # N.S.
 TukeyHSD(aov(reads ~ libprep, data = top_list2_rivS)) # N.S.
 TukeyHSD(aov(reads ~ libprep, data = top_list2_stdM)) # N.S.

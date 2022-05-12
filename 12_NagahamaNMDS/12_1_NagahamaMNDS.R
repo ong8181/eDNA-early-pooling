@@ -1,7 +1,11 @@
 ####
 #### No.12.1 Nagahama NMDS all
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "12_NagahamaNMDS") setwd("12_NagahamaNMDS")
 
 # Set random seeds (for reproduction)
 ran.seed <- 1234
@@ -12,7 +16,7 @@ library(tidyverse); packageVersion("tidyverse") # 1.3.1, 2021.10.16
 library(phyloseq); packageVersion("phyloseq") # 1.38.0, 2021.11.18
 library(cowplot); packageVersion("cowplot") # 1.1.1, 2021.6.13
 library(ggsci); packageVersion("ggsci") # 2.9, 2021.6.13
-library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.6.13
+library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.3, 2022.5.5
 library(ggrepel); packageVersion("ggrepel") # 0.9.1, 2021.11.29
 theme_set(theme_cowplot())
 source("../functions_R/F02_HelperFunctions.R") # Helper function for visualization
@@ -37,6 +41,9 @@ ps_exp2_even <- ps_exp2 %>% subset_samples(sample_nc == "sample") %>%
   prune_taxa(taxa_sums(.) > 0, .) %>% 
   rarefy_even_depth(rngseed = ran.seed, replace = FALSE, trimOTUs = FALSE)
 sample_sums(ps_exp2_even)
+## Remove OTUs < 0.01% in each sample
+ps_exp2_even <- transform_sample_counts(ps_exp2_even, function(x){replace(x, x < ceiling(mean(sample_sums(ps_exp2_even))*0.0001), 0)}) 
+mean(sample_sums(ps_exp2_even)) # 95321.33 reads for each sample
 
 
 # ----------------------------------------------- #
@@ -46,6 +53,8 @@ ps_seaN_even <- merge_phyloseq(ps_exp1_even, ps_exp2_even, ps_exp3_even) %>%
   subset_samples((site == "River_Seta" | site == "Sea_Nagahama" | site == "Sea_Otomi") & sample_nc == "sample") %>%
   subset_taxa(habitat != "freshwater" & habitat != "std") %>%
   rarefy_even_depth(rngseed = ran.seed, replace = FALSE, trimOTUs = FALSE)
+sample_sums(ps_seaN_even)
+
 
 # ----------------------------------------------- #
 #   Visualize pattern (Experiment 2)
@@ -111,13 +120,8 @@ n2 <- n2 + stat_ellipse(geom = "polygon", alpha = 0.3, aes(fill = site), color =
 # ----------------------------------------------- #
 #         Save data
 # ----------------------------------------------- #
-# Save figures
-#ggsave(file = sprintf("%s/Sea_Nagahama_CompAll.pdf", output_folder),
-#       plot = f1, width = 24, height = 8)
-#ggsave(file = sprintf("%s/Sea_Nagahama_NMDS.pdf", output_folder),
-#       plot = n1, width = 24, height = 16)
-
 # Save figure objects
+#dir.create("../FigCode"); dir.create("../FigCode/00_RawFigs")
 fig_dir <- "../FigCode/00_RawFigs/"
 saveRDS(list(f1, n1, n2), paste0(fig_dir, "12_1_Fig_NagahamaNMDS_all.obj"))
 

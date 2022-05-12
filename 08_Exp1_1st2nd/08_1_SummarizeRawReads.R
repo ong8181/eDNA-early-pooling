@@ -1,7 +1,11 @@
 ####
-#### No.8.1 Summarize Experiment I
+#### Experiment 1: Summarize results
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "08_Exp1_1st2nd") setwd("08_Exp1_1st2nd")
 
 # Set random seeds (for reproduction)
 ran.seed <- 1234
@@ -31,10 +35,36 @@ ps_exp1 <- readRDS("../07_CompilePhyloseqOut/ps_exp1.obj")
 
 
 # ----------------------------------------------- #
+#    Subtract NC from ps_exp1
+# ----------------------------------------------- #
+# Prepare NC OTU table
+ps_exp1_nc <- ps_exp1 %>% subset_samples(sample_nc == "nc")
+## Add cat_comb
+sample_data(ps_exp1_nc)[,"cat_comb"] <- ps_exp1_nc %>%
+  sample_data %>% as_tibble %>%
+  select(sample_nc, site, index_method, enzyme) %>% 
+  mutate(cat_comb = paste0(site, "-", index_method, "-", enzyme)) %>% 
+  pull(cat_comb)
+## Extract cat_comb for all data
+group_nc_df <- ps_exp1 %>% sample_data %>% as_tibble %>%
+  select(sample_nc, site, index_method, enzyme) %>% 
+  mutate(cat_comb = paste0(site, "-", index_method, "-", enzyme))
+## Extract NC reads
+nc_reads <- ps_exp1_nc %>% otu_table %>% as.matrix %>% 
+  .[match(group_nc_df$cat_comb,
+          ps_exp1_nc %>% sample_data %>% as_tibble %>% pull(cat_comb)),]
+## Subtract NC reads from sample reads
+ps_exp1_flt1 <- ps_exp1
+otu_table(ps_exp1_flt1) <- ((ps_exp1 %>% otu_table %>% as.matrix) - nc_reads) %>% 
+  replace(., . < 0, 0) %>% otu_table(., taxa_are_rows = FALSE)
+taxa_sums(ps_exp1_flt1)
+ps_exp1_flt1 <- ps_exp1_flt1 %>% prune_taxa(taxa_sums(.) > 0, .)
+
+
+# ----------------------------------------------- #
 #    Visualize pattern: Reads
 # ----------------------------------------------- #
 get_palette <- colorRampPalette(brewer.pal(8, "Paired"))
-
 target_rank <- "family"
 ps_rename <- taxa_name_summarize(ps_exp1, target_rank, top_taxa_n = 10)
 ps_m1 <- speedyseq::psmelt(ps_rename)
@@ -43,45 +73,46 @@ ps_m3 <- stats::aggregate(ps_m1$Abundance, by=list(ps_m1$Sample, ps_m1$rep_tax),
 colnames(ps_m2) <- c("sample", target_rank, "abundance")
 colnames(ps_m3) <- c("sample", "rep_tax", "abundance")
 # Figures
-(f1 <- ggplot(ps_m2, aes(x = sample, y = abundance, group = family, fill = family)) +
+f1 <- ggplot(ps_m2, aes(x = sample, y = abundance, group = family, fill = family)) +
     geom_bar(stat = "identity", colour = NA) +
     theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
     scale_fill_manual(values = get_palette(45)) +
     xlab(NULL) + ylab("Sequence reads") +
-    NULL)
-(f2 <- ggplot(ps_m3, aes(x = sample, y = abundance, group = rep_tax, fill = rep_tax)) +
+    NULL
+f2 <- ggplot(ps_m3, aes(x = sample, y = abundance, group = rep_tax, fill = rep_tax)) +
     geom_bar(stat = "identity", colour = NA) + theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
     xlab(NULL) + ylab("Sequence reads") +
     scale_fill_manual(values = get_palette(11)) +
-    NULL)
+    NULL
+
 
 # ----------------------------------------------- #
 #    Visualize pattern: Reads
 # ----------------------------------------------- #
-(f3 <- ggplot(ps_m1, aes(x = replicate, y = Abundance, fill = rep_tax)) +
+f3 <- ggplot(ps_m1, aes(x = replicate, y = Abundance, fill = rep_tax)) +
     geom_bar(stat = "identity", colour = NA) +
     theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
     facet_wrap(~ site + index_method + enzyme, ncol = 3) +
     scale_fill_brewer("family", palette = "Paired") +
-    xlab(NULL) + ylab("Sequence reads") + panel_border())
+    xlab(NULL) + ylab("Sequence reads") + panel_border()
 
 ## Select or remove STD sequences
 ps_s1 <- ps_m1 %>% filter(family == "STDseqs") 
 ps_s2 <- ps_m1 %>% filter(family != "STDseqs")
-(f4 <- ggplot(ps_s1, aes(x = replicate, y = Abundance, fill = species)) +
+f4 <- ggplot(ps_s1, aes(x = replicate, y = Abundance, fill = species)) +
     geom_bar(stat = "identity", colour = NA) +
     theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
     facet_wrap(~ site + index_method + enzyme, ncol = 3) +
     scale_fill_manual(values = get_palette(12)) +
-    xlab(NULL) + ylab("Sequence reads") + panel_border())
+    xlab(NULL) + ylab("Sequence reads") + panel_border()
 
 
 # ----------------------------------------------- #
 #    Visualize pattern: Diversity
 # ----------------------------------------------- #
 # Exclude apparent cross-contamination (e.g., STD reads from samples)
-ps_exp1_natural <- subset_samples(ps_exp1, site != "STD_Mix") %>% subset_taxa(genus != "STDseqs")
-ps_exp1_std <- subset_samples(ps_exp1, site == "STD_Mix") %>% subset_taxa(genus == "STDseqs")
+ps_exp1_natural <- subset_samples(ps_exp1_flt1, site != "STD_Mix") %>% subset_taxa(genus != "STDseqs")
+ps_exp1_std <- subset_samples(ps_exp1_flt1, site == "STD_Mix") %>% subset_taxa(genus == "STDseqs")
 ps_exp1_decontam <- merge_phyloseq(ps_exp1_natural, ps_exp1_std)
 
 f5 <- plot_richness(subset_samples(ps_exp1_decontam, sample_nc == "sample"), measures = "Observed", x = "enzyme") +
@@ -106,7 +137,7 @@ sp_data %>%
 #         Relative abundance data
 # ----------------------------------------------- #
 # Check relative abundance
-ps_rename2 <- taxa_name_summarize(ps_exp1, "family", top_taxa_n = 10)
+ps_rename2 <- taxa_name_summarize(ps_exp1_flt1, "family", top_taxa_n = 10)
 ps_rel <- transform_sample_counts(ps_rename2, function(x) x/sum(x))
 otu_table(ps_rel)[is.na(otu_table(ps_rel))] <- 0
 ps_rel <- prune_taxa(taxa_sums(ps_rel) > 0, ps_rel)
@@ -118,48 +149,33 @@ colnames(ps_r2) <- c("sample", target_rank, "abundance")
 colnames(ps_r3) <- c("sample", "rep_tax", "abundance")
 
 # Figures
-(r1 <- ggplot(ps_r1, aes(x = replicate, y = Abundance, fill = rep_tax)) +
-    geom_bar(stat = "identity", colour = NA) +
-    theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
-    facet_wrap(~ site + index_method + enzyme, ncol = 3) +
-    scale_fill_brewer("family", palette = "Paired") +
-    xlab(NULL) + ylab("Relative abundance") + panel_border())
-(r2 <- ps_r1 %>% filter(sample_nc == "sample") %>%
-    ggplot(aes(x = replicate, y = Abundance, fill = rep_tax)) +
-    geom_bar(stat = "identity", colour = NA) +
-    theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
-    facet_wrap(~ site + index_method + enzyme, ncol = 3) +
-    scale_fill_brewer("family", palette = "Paired") +
-    xlab(NULL) + ylab("Relative abundance") + panel_border())
-(r3 <- ps_r1 %>% filter(family == "STDseqs") %>%
-    ggplot(aes(x = replicate, y = Abundance, fill = species)) +
-    geom_bar(stat = "identity", colour = NA) +
-    theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
-    facet_wrap(~ site + index_method + enzyme, ncol = 3) +
-    scale_fill_manual(values = get_palette(12)) +
-    xlab(NULL) + ylab("Relative abundance") + panel_border())
-(r4 <- ps_r1 %>% filter(query != "STDseqs") %>%
-    ggplot(aes(x = replicate, y = Abundance, fill = family)) +
-    geom_bar(stat = "identity", colour = NA) +
-    theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
-    facet_wrap(~ site + index_method + enzyme, ncol = 3) +
-    scale_fill_manual(values = get_palette(length(unique(ps_r1$family)))) +
-    xlab(NULL) + ylab("Sequence reads") + panel_border() + theme(legend.position = "none"))
-
-
-# ----------------------------------------------- #
-#         Save figures
-# ----------------------------------------------- #
-#pdf(file = sprintf("%s/Summary.pdf", output_folder), width = 18, height = 6)
-#plot_grid(f2, plot_richness(ps_exp1, measures = "Observed"),
-#          ncol = 2, rel_widths = c(1,0.7))
-#dev.off()
-#ggsave(file = sprintf("%s/SummaryReads.pdf", output_folder), plot = f3, width = 12, height = 12)
-#ggsave(file = sprintf("%s/SummaryDiversity.pdf", output_folder), plot = f5, width = 12, height = 12)
-#ggsave(file = sprintf("%s/STDReads.pdf", output_folder), plot = f4, width = 12, height = 12)
-#ggsave(file = sprintf("%s/SummaryRelative.pdf", output_folder), plot = r1, width = 12, height = 12)
-#ggsave(file = sprintf("%s/SummaryRelative_noNC.pdf", output_folder), plot = r2, width = 12, height = 12)
-#ggsave(file = sprintf("%s/STDRelative.pdf", output_folder), plot = r3, width = 12, height = 12)
+r1 <- ggplot(ps_r1, aes(x = replicate, y = Abundance, fill = rep_tax)) +
+  geom_bar(stat = "identity", colour = NA) +
+  theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
+  facet_wrap(~ site + index_method + enzyme, ncol = 3) +
+  scale_fill_brewer("family", palette = "Paired") +
+  xlab(NULL) + ylab("Relative abundance") + panel_border()
+r2 <- ps_r1 %>% filter(sample_nc == "sample") %>%
+  ggplot(aes(x = replicate, y = Abundance, fill = rep_tax)) +
+  geom_bar(stat = "identity", colour = NA) +
+  theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
+  facet_wrap(~ site + index_method + enzyme, ncol = 3) +
+  scale_fill_brewer("family", palette = "Paired") +
+  xlab(NULL) + ylab("Relative abundance") + panel_border()
+r3 <- ps_r1 %>% filter(family == "STDseqs") %>%
+  ggplot(aes(x = replicate, y = Abundance, fill = species)) +
+  geom_bar(stat = "identity", colour = NA) +
+  theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
+  facet_wrap(~ site + index_method + enzyme, ncol = 3) +
+  scale_fill_manual(values = get_palette(12)) +
+  xlab(NULL) + ylab("Relative abundance") + panel_border()
+r4 <- ps_r1 %>% filter(query != "STDseqs") %>%
+  ggplot(aes(x = replicate, y = Abundance, fill = family)) +
+  geom_bar(stat = "identity", colour = NA) +
+  theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
+  facet_wrap(~ site + index_method + enzyme, ncol = 3) +
+  scale_fill_manual(values = get_palette(length(unique(ps_r1$family)))) +
+  xlab(NULL) + ylab("Sequence reads") + panel_border() + theme(legend.position = "none")
 
 
 # ----------------------------------------------- #
@@ -169,6 +185,7 @@ colnames(ps_r3) <- c("sample", "rep_tax", "abundance")
 write.csv(otu_table(ps_exp1), sprintf("%s/otu_table_exp1.csv", output_folder))
 write.csv(sample_data(ps_exp1), sprintf("%s/sample_data_exp1.csv", output_folder))
 write.csv(as.data.frame(tax_table(ps_exp1)), sprintf("%s/tax_table_exp1.csv", output_folder))
+saveRDS(ps_exp1_flt1, sprintf("%s/ps_exp1_flt1.obj", output_folder))
 
 # Save session info
 writeLines(capture.output(sessionInfo()),
@@ -178,8 +195,7 @@ writeLines(capture.output(sessionInfo()),
 # ----------------------------------------------- #
 #   Save figures for publication
 # ----------------------------------------------- #
-dir.create("../FigCode")
-dir.create("../FigCode/00_RawFigs")
+#dir.create("../FigCode"); dir.create("../FigCode/00_RawFigs")
 fig_dir <- "../FigCode/00_RawFigs/"
 # Relabeling the facet strips
 saveRDS(f3, paste0(fig_dir, "8_1_Fig_Exp1_SummaryReads.obj"))

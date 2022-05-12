@@ -3,6 +3,9 @@
 #### R 4.1.2
 ####
 
+# Set working directory
+if(basename(getwd()) != "09_Exp2_exosap") setwd("09_Exp2_exosap")
+
 # Set random seeds (for reproduction)
 ran.seed <- 1234
 set.seed(ran.seed)
@@ -12,7 +15,7 @@ library(tidyverse); packageVersion("tidyverse") # 1.3.1, 2021.10.16
 library(phyloseq); packageVersion("phyloseq") # 1.38.0, 2021.11.18
 library(cowplot); packageVersion("cowplot") # 1.1.1, 2021.6.13
 library(ggsci); packageVersion("ggsci") # 2.9, 2021.6.13
-library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.6.13
+library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.3, 2021.6.13
 theme_set(theme_cowplot())
 source("../functions_R/F02_HelperFunctions.R") # Helper function for visualization
 
@@ -42,25 +45,17 @@ ps_m3 <- stats::aggregate(ps_m1$Abundance, by=list(ps_m1$Sample, ps_m1$rep_tax),
 colnames(ps_m2) <- c("sample", target_rank, "abundance")
 colnames(ps_m3) <- c("sample", "rep_tax", "abundance")
 # Figures
-(f1 <- ggplot(ps_m2, aes(x = sample, y = abundance, group = family, fill = family)) +
-    geom_bar(stat = "identity", colour = NA) +
-    theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
-    scale_fill_manual(values = get_palette(29)) +
-    xlab(NULL) + ylab("Sequence reads") +
-    NULL)
-(f2 <- ggplot(ps_m3, aes(x = sample, y = abundance, group = rep_tax, fill = rep_tax)) +
-    geom_bar(stat = "identity", colour = NA) + theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
-    xlab(NULL) + ylab("Sequence reads") +
-    scale_fill_manual(values = get_palette(11)) +
-    NULL)
-
-
-# ----------------------------------------------- #
-#         Save figures
-# ----------------------------------------------- #
-#pdf(file = sprintf("%s/Summary.pdf", output_folder), width = 9, height = 6)
-#plot_grid(f2, ncol = 1)
-#dev.off()
+f1 <- ggplot(ps_m2, aes(x = sample, y = abundance, group = family, fill = family)) +
+  geom_bar(stat = "identity", colour = NA) +
+  theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
+  scale_fill_manual(values = get_palette(29)) +
+  xlab(NULL) + ylab("Sequence reads") +
+  NULL
+f2 <- ggplot(ps_m3, aes(x = sample, y = abundance, group = rep_tax, fill = rep_tax)) +
+  geom_bar(stat = "identity", colour = NA) + theme(axis.text.x = element_text(angle = -90, hjust = 1, vjust = 0.5, size = 6)) + 
+  xlab(NULL) + ylab("Sequence reads") +
+  scale_fill_manual(values = get_palette(11)) +
+  NULL
 
 
 # ----------------------------------------------- #

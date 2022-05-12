@@ -1,7 +1,11 @@
 ####
-#### No.13.1 Summarizing rare OTUs
+#### No.13.2 Summarizing rare OTUs for STD_Mix samples
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "13_RareOTU") setwd("13_RareOTU")
 
 # Set random seeds (for reproduction)
 ran.seed <- 1234
@@ -12,7 +16,7 @@ library(tidyverse); packageVersion("tidyverse") # 1.3.1, 2021.10.16
 library(phyloseq); packageVersion("phyloseq") # 1.38.0, 2021.11.18
 library(cowplot); packageVersion("cowplot") # 1.1.1, 2021.6.13
 library(ggsci); packageVersion("ggsci") # 2.9, 2021.6.13
-library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.6.13
+library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.3, 2022.5.5
 theme_set(theme_cowplot())
 source("../functions_R/F02_HelperFunctions.R") # Helper function for visualization
 get_palette <- colorRampPalette(brewer.pal(8, "Paired"))
@@ -29,34 +33,35 @@ dir.create(output_folder)
 ps_exp3_even <- readRDS("../10_Exp3_repvol/10_2_EvenDepthOut/ps_exp3_even.obj")
 sample_sums(ps_exp3_even)
 
+
 # ----------------------------------------------- #
 #    Extract treatment-specific taxa
 # ----------------------------------------------- #
 # Replication test
 ps_exp3_1rep <- ps_exp3_even %>% subset_samples(test_category == "1rep") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 ps_exp3_2rep <- ps_exp3_even %>% subset_samples(test_category == "2rep") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 ps_exp3_4rep <- ps_exp3_even %>% subset_samples(test_category == "4rep") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 ps_exp3_8rep <- ps_exp3_even %>% subset_samples(test_category == "8rep") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 # Volume test
 ps_exp3_1vol <- ps_exp3_even %>% subset_samples(test_category == "1ul") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 ps_exp3_2vol <- ps_exp3_even %>% subset_samples(test_category == "2ul") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 ps_exp3_4vol <- ps_exp3_even %>% subset_samples(test_category == "4ul") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 ps_exp3_8vol <- ps_exp3_even %>% subset_samples(test_category == "8ul") %>%
-  subset_samples(site == "Sea_Nagahama") %>%
+  subset_samples(site == "STD_Mix") %>%
   prune_taxa(taxa_sums(.) > 0, .)
 
 # Identify treatment-specific taxa
@@ -241,14 +246,15 @@ g4 <- ps_vol_m1 %>%
 #         Save data
 # ----------------------------------------------- #
 # Save figures
-ggsave(file = sprintf("%s/RareOTUs_SeaNagahama_Rep.pdf", output_folder),
+ggsave(file = sprintf("%s/RareOTUs_STDMix_Rep.pdf", output_folder),
        plot = plot_grid(g1, g2, rel_widths = c(1,0.7), align = "hv", ncol = 2), width = 12, height = 6)
-ggsave(file = sprintf("%s/RareOTUs_SeaNagahama_Vol.pdf", output_folder),
+ggsave(file = sprintf("%s/RareOTUs_STDMix_Vol.pdf", output_folder),
        plot = plot_grid(g3, g4, rel_widths = c(1,0.7), align = "hv", ncol = 2), width = 12, height = 6)
 
 # Save figure objects
+#dir.create("../FigCode"); dir.create("../FigCode/00_RawFigs")
 fig_dir <- "../FigCode/00_RawFigs/"
-saveRDS(list(g1, g2, g3, g4), paste0(fig_dir, "13_1_Fig_RareOTUs.obj"))
+saveRDS(list(g1, g2, g3, g4), paste0(fig_dir, "13_2_Fig_RareOTUs.obj"))
 
 # Save session info
 writeLines(capture.output(sessionInfo()),

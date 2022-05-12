@@ -1,7 +1,11 @@
 ####
-#### Format figures for Experiment I
+#### Format figures for eDNA-seq
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "FigCode") setwd("FigCode")
 
 # Load libraries
 ## For general
@@ -23,7 +27,7 @@ fig_dir_out <- "00_FormattedFigs/"
 dir.create(fig_dir_out)
 
 # Prepare color palette
-library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.8.25
+library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.3, 2022.5.5
 get_palette <- colorRampPalette(brewer.pal(8, "Paired"))
 
 
@@ -44,7 +48,7 @@ var_char1 <- c("1stPCR_indexing", "2ndPCR_indexing")
 ## Label
 discrete_label <- c("2nd PCR\nindexing\nKAPA",
                     "2nd PCR\nindexing\nPlatinum",
-                    "1st PCR\nindexing\nPlatinum")
+                    "1st PCR\ntagging\nPlatinum")
 site_level <- c("Sea_Nagahama", "Sea_Otomi", "River_Seta", "STD_Mix")
 
 
@@ -52,8 +56,8 @@ site_level <- c("Sea_Nagahama", "Sea_Otomi", "River_Seta", "STD_Mix")
 #   NMDS
 # --------------------------------------------------------- #
 ### Relabeling
-fig_exp1_nmds[[1]] <- fig_exp1_nmds[[1]] + labs(color = "Indexing method", shape = "Enzyme", fill = "Indexing method")
-fig_exp1_nmds[[1]]$data$index_method[fig_exp1_nmds[[1]]$data$index_method == var_char1[1]] <- "1st PCR indexing"
+fig_exp1_nmds[[1]] <- fig_exp1_nmds[[1]] + labs(color = "Method", shape = "Enzyme", fill = "Method")
+fig_exp1_nmds[[1]]$data$index_method[fig_exp1_nmds[[1]]$data$index_method == var_char1[1]] <- "1st PCR tagging"
 fig_exp1_nmds[[1]]$data$index_method[fig_exp1_nmds[[1]]$data$index_method == var_char1[2]] <- "2nd PCR indexing"
 nmds_legend <- get_legend(fig_exp1_nmds[[1]])
 fig_exp1_nmds_all <- plot_grid(fig_exp1_nmds[[1]] + theme(legend.position = "none"),
@@ -74,10 +78,10 @@ fig_exp1_nmds_all <- plot_grid(fig_exp1_nmds[[1]] + theme(legend.position = "non
 fig_exp1_compdiv[[1]]$data$test_category <- factor(fig_exp1_compdiv[[1]]$data$test_category,
                                                    levels = c("2nd_indexing_KAPA", "2nd_indexing_Platinum", "1st_indexing_Platinum"))
 fig_exp1_compdiv[[1]]$data$site <- factor(fig_exp1_compdiv[[1]]$data$site, levels = site_level)
-fig_exp1_compdiv[[2]]$data$index_method[fig_exp1_compdiv[[2]]$data$index_method == var_char1[1]] <- "1st PCR indexing"
+fig_exp1_compdiv[[2]]$data$index_method[fig_exp1_compdiv[[2]]$data$index_method == var_char1[1]] <- "1st PCR tagging"
 fig_exp1_compdiv[[2]]$data$index_method[fig_exp1_compdiv[[2]]$data$index_method == var_char1[2]] <- "2nd PCR indexing"
 fig_exp1_compdiv[[2]]$data$site <- factor(fig_exp1_compdiv[[2]]$data$site, levels = c("Sea_Nagahama", "Sea_Otomi", "River_Seta", "STD_Mix"))
-fig_exp1_compdiv[[2]]$data$index_method <- factor(fig_exp1_compdiv[[2]]$data$index_method, levels = c("2nd PCR indexing", "1st PCR indexing"))
+fig_exp1_compdiv[[2]]$data$index_method <- factor(fig_exp1_compdiv[[2]]$data$index_method, levels = c("2nd PCR indexing", "1st PCR tagging"))
 fig_exp1_compdiv[[2]]$data$enzyme <- factor(fig_exp1_compdiv[[2]]$data$enzyme, levels = c("KAPA", "Platinum"))
 ## Prepare N.S. text for diversity plot
 text_div <- data.frame(x = 2.3, y = 32, lab = "N.S.")
@@ -108,10 +112,12 @@ fig_exp1_bray$data$libprep <- factor(fig_exp1_bray$data$libprep,
 text_bray1 <- data.frame(x = 2, y = 1, lab = c("N.S."), site = factor("Sea_Nagahama", levels = levels(fig_exp1_bray$data$site)))
 text_bray2 <- data.frame(x = 2, y = 1, lab = c("N.S."), site = factor("Sea_Otomi", levels = levels(fig_exp1_bray$data$site)))
 text_bray3 <- data.frame(x = 2, y = 1, lab = c("N.S."), site = factor("River_Seta", levels = levels(fig_exp1_bray$data$site)))
-text_bray4 <- data.frame(x = c(1.5, 2.5), y = c(0.55, 0.75),
-                         lab = c("italic(P) == 0.086", "italic(P) < 0.001"),
+text_bray4 <- data.frame(x = c(1.5, 2.0, 2.5),
+                         y = c(0.55, 0.65, 0.75),
+                         lab = c("italic(P) == 0.065", "italic(P) == 0.065", "italic(P) < 0.001"),
                          site = factor("STD_Mix", levels = levels(fig_exp1_bray$data$site)))
-line_bray4 <- data.frame(x = c(1, 2), xend = c(2, 3), y = c(0.52, 0.72), yend = c(0.52, 0.72),
+line_bray4 <- data.frame(x = c(1, 1, 2), xend = c(2, 3, 3),
+                         y = c(0.52, 0.62, 0.72), yend = c(0.52, 0.62, 0.72),
                          site = factor("STD_Mix", levels = levels(fig_exp1_bray$data$site)))
 
 fig_exp1_bray2 <- fig_exp1_bray +
@@ -139,9 +145,9 @@ fig_exp1_main <- plot_grid(fig_exp1_nmds_all,
 #  Supplementary Figures
 # --------------------------------------------------------- #
 ## Exp1 sequence reads
-fig_exp1_summary$data$index_method[fig_exp1_summary$data$index_method == var_char1[1]] <- "1st PCR indexing"
+fig_exp1_summary$data$index_method[fig_exp1_summary$data$index_method == var_char1[1]] <- "1st PCR tagging"
 fig_exp1_summary$data$index_method[fig_exp1_summary$data$index_method == var_char1[2]] <- "2nd PCR indexing"
-fig_exp1_summary$data$index_method <- factor(fig_exp1_summary$data$index_method, levels = c("2nd PCR indexing", "1st PCR indexing"))
+fig_exp1_summary$data$index_method <- factor(fig_exp1_summary$data$index_method, levels = c("2nd PCR indexing", "1st PCR tagging"))
 fig_exp1_summary$data$enzyme <- factor(fig_exp1_summary$data$enzyme, levels = c("KAPA", "Platinum"))
 fig_exp1_summary <- fig_exp1_summary + scale_fill_igv(name = "Family")
 
@@ -178,7 +184,7 @@ tax_prop2 <- data.frame(x = rep(2,4), y = rep(0.5,4),
 tax_prop2_ns <- data.frame(x = rep(2,3), y = rep(0.46,3),
                            lab = c("N.S."), site = factor(site_level[2:4]))
 text_prop2 <- data.frame(x = c(2, 2.5), y = c(0.37, 0.30),
-                         lab = c("italic(P) < 0.01", "italic(P) == 0.080"),
+                         lab = c("italic(P) < 0.01", "italic(P) == 0.068"),
                          site = factor("Sea_Nagahama", levels = levels(fig_exp1_topprop[[2]]$data$site)))
 line_prop <- data.frame(x = c(1, 2), xend = c(3, 3), y = c(0.35, 0.28), yend = c(0.35, 0.28),
                          site = factor("Sea_Nagahama", levels = levels(fig_exp1_topprop[[2]]$data$site)))
@@ -210,16 +216,13 @@ fig_exp1_topprop3 <- fig_exp1_topprop[[3]] +
 ## Relative abundance of top-rank taxa
 fig_exp1_top_grid <- plot_grid(fig_exp1_topprop1 +
                                  theme(axis.text.x = element_blank()) +
-                                 ggtitle("The most abundance taxon"),
+                                 ggtitle("The most abundant taxon"),
                                fig_exp1_topprop2 +
                                  theme(axis.text.x = element_blank()) +
                                  ggtitle("Second most-abundant taxon"),
                                fig_exp1_topprop3 +
                                  ggtitle("Third most-abundant taxon"),
                                ncol = 1, rel_heights = c(1,1,1.1), labels = letters[1:3])
-
-
-
 
 
 # --------------------------------------------------------- #

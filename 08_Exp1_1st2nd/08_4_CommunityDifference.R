@@ -1,7 +1,11 @@
 ####
-#### No.8.4 Community difference
+#### Community difference
+#### 2022.05.12 revision for Environmental DNA
 #### R 4.1.2
 ####
+
+# Set working directory
+if(basename(getwd()) != "08_Exp1_1st2nd") setwd("08_Exp1_1st2nd")
 
 # Set random seeds (for reproduction)
 ran.seed <- 1234
@@ -11,7 +15,7 @@ set.seed(ran.seed)
 library(tidyverse); packageVersion("tidyverse") # 1.3.1, 2021.10.16
 library(phyloseq); packageVersion("phyloseq") # 1.38.0, 2021.11.18
 library(cowplot); packageVersion("cowplot") # 1.1.1, 2021.6.13
-library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.2, 2021.6.13
+library(RColorBrewer); packageVersion("RColorBrewer") # 1.1.3, 2022.5.5
 theme_set(theme_cowplot())
 
 # Generate output folder
@@ -119,15 +123,15 @@ bray_df$bray_curtis <- c(seaN_index1st_plat, seaN_index2nd_plat, seaN_index2nd_k
 # ----------------------------------------------- #
 #         Visualize pattern
 # ----------------------------------------------- #
-(g1 <- bray_df %>% ggplot(aes(x = libprep, y = bray_curtis)) +
-    geom_boxplot(outlier.color = NA, outlier.size = 0) +
-    geom_jitter(height = 0, width = 0.2) +
-    facet_wrap(~ site, ncol = 2) +
-    panel_border() +
-    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
-    xlab(NULL) + ylab("Bray-Curtis dissimilarity") +
-    ylim(0, 1) +
-    NULL)
+g1 <- bray_df %>% ggplot(aes(x = libprep, y = bray_curtis)) +
+  geom_boxplot(outlier.color = NA, outlier.size = 0) +
+  geom_jitter(height = 0, width = 0.2) +
+  facet_wrap(~ site, ncol = 2) +
+  panel_border() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  xlab(NULL) + ylab("Bray-Curtis dissimilarity") +
+  ylim(0, 1) +
+  NULL
 
 
 # ----------------------------------------------- #
@@ -141,7 +145,7 @@ plat_id_all <- c(rep("1stPCR_indexing_Platinum", 5),
                     rep("2ndPCR_indexing_Platinum", 5))
 index2nd_id_all <- c(rep("2ndPCR_indexing_Platinum", 5),
                     rep("2ndPCR_indexing_KAPA", 5))
-## Compare all library preparation protocols
+## 1st PCR indexing v.s. 2nd PCR indexing (Platinum)
 set.seed(ran.seed); vegan::anosim(bray1, libprep_id_all) # Sea_Nagahama, P = 0.019
 set.seed(ran.seed); vegan::anosim(bray2, libprep_id_all) # Sea_Otomi, P = 0.632
 set.seed(ran.seed); vegan::anosim(bray3, libprep_id_all) # River_Seta, P = 0.981
@@ -157,6 +161,21 @@ set.seed(ran.seed); vegan::anosim(plat_only2, plat_id_all) # Sea_Otomi, P = 0.75
 set.seed(ran.seed); vegan::anosim(plat_only3, plat_id_all) # River_Seta, P = 0.935
 set.seed(ran.seed); vegan::anosim(plat_only4, plat_id_all) # STD_Mix, P = 0.109
 
+## Difference in Bray-Curtis dissimilarity between 1st PCR indexing v.s. 2nd PCR indexing
+seaN_tr <- subset(bray_df, site == "Sea_Nagahama") %>% mutate(log_bray = -log(bray_curtis))
+seaO_tr <- subset(bray_df, site == "Sea_Otomi") %>% mutate(log_bray = -log(bray_curtis))
+rivS_tr <- subset(bray_df, site == "River_Seta") %>% mutate(log_bray = -log(bray_curtis))
+stdM_tr <- subset(bray_df, site == "STD_Mix") %>% mutate(log_bray = -log(bray_curtis))
+
+# Perform GLM using gamma distribution (log link)
+summary(glm(log_bray ~ index_method + enzyme, data = seaN_plat_tr, family = Gamma(link = "log")))
+## Sea_Nagahama, 2ndPCR_indexing, P = 0.00906, *
+summary(glm(log_bray ~ index_method + enzyme, data = seaO_tr, family = Gamma(link = "log")))
+## Sea_Otomi, 2ndPCR_indexing, P = 0.4566, NS
+summary(glm(log_bray ~ index_method + enzyme, data = rivS_tr, family = Gamma(link = "log")))
+## River_Seta, 2ndPCR_indexing, P = 0.3831, NS
+summary(glm(log_bray ~ index_method + enzyme, data = stdM_tr, family = Gamma(link = "log")))
+## STD_Mix, 2ndPCR_indexing, P < 0.0001, ***
 
 # ----------------------------------------------- #
 #   Custom bootstrap test
@@ -200,19 +219,19 @@ bray_boot <- function(bray_df_object, n_iter = 1000, ran.seed = 1234) {
 
 # Test Bary-Curtis dissimilarity values
 ## 1st_indexing_Platinum v.s. 2nd_indexing_KAPA
-(seaN_method_ci <- bray_boot(new_old1)) # NS, P = 0.296
-(seaO_method_ci <- bray_boot(new_old2)) # NS, P = 0.774
+(seaN_method_ci <- bray_boot(new_old1)) # NS, P = 0.291
+(seaO_method_ci <- bray_boot(new_old2)) # NS, P = 0.811
 (rivS_method_ci <- bray_boot(new_old3)) # NS, P = 0.607
 (stdM_method_ci <- bray_boot(new_old4)) # NS, P = 0.065 -
 ## 2nd_indexing, KAPA v.s. Platinum
-(seaN_id2nd_ci <- bray_boot(id2nd_only1)) # NS, P = 0.982
-(seaO_id2nd_ci <- bray_boot(id2nd_only2)) # NS, P = 0.942
-(rivS_id2nd_ci <- bray_boot(id2nd_only3)) # NS, P = 0.860
-(stdM_id2nd_ci <- bray_boot(id2nd_only4)) # NS, P = 0.086
+(seaN_id2nd_ci <- bray_boot(id2nd_only1)) # NS, P = 0.945
+(seaO_id2nd_ci <- bray_boot(id2nd_only2)) # NS, P = 0.946
+(rivS_id2nd_ci <- bray_boot(id2nd_only3)) # NS, P = 0.846
+(stdM_id2nd_ci <- bray_boot(id2nd_only4)) # NS, P = 0.065 -
 ## Platinum, 1st_indexing v.s. 2nd_indexing
-(seaN_plat_ci <- bray_boot(plat_only1)) # NS, P = 0.313
-(seaO_plat_ci <- bray_boot(plat_only2)) # NS, P = 0.755
-(rivS_plat_ci <- bray_boot(plat_only3)) # NS, P = 0.575
+(seaN_plat_ci <- bray_boot(plat_only1)) # NS, P = 0.308
+(seaO_plat_ci <- bray_boot(plat_only2)) # NS, P = 0.759
+(rivS_plat_ci <- bray_boot(plat_only3)) # NS, P = 0.603
 (stdM_plat_ci <- bray_boot(plat_only4)) # Significant, P < 0.001
 
 
@@ -270,11 +289,8 @@ for(i in 1:5){
 # ----------------------------------------------- #
 #         Save figures
 # ----------------------------------------------- #
-# Output figures
-#ggsave(file = sprintf("%s/BrayCurtis_All.pdf", output_folder),
-#       plot = g1, width = 10, height = 8)
-
 # Save figure objects
+#dir.create("../FigCode"); dir.create("../FigCode/00_RawFigs")
 fig_dir <- "../FigCode/00_RawFigs/"
 saveRDS(g1, paste0(fig_dir, "8_4_BrayCurtis.obj"))
 saveRDS(top_rank_list, paste0(fig_dir, "8_4_TopProportion.obj"))
