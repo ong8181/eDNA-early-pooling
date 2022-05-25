@@ -1,4 +1,6 @@
 # Analysis codes for Ushio et al. (2022) "An efficient early-pooling protocol for environmental DNA metabarcoding" _bioRxiv_
+[![DOI](https://zenodo.org/badge/458195380.svg)](https://zenodo.org/badge/latestdoi/458195380)
+
 This repository contains analysis codes to reproduce the results in Ushio et al. (2022)
 _bioRxiv_ https://doi.org/10.1101/2022.02.15.480497.
 
@@ -49,7 +51,7 @@ see text files in `00_SessionInfo/`
 # Downloading sequence data
 Demultiplexed FASTQ files are available in DDBJ DRA (accession number = DRA013399). If you want to reproduce the analysis, place the downloaded FASTQ files in `seqdata_demultiplexed` folder using the following commands. You can re-run the analysis from DADA2 analysis.
 
-\*Each sample folder usually contains two FASTQ files (paired-end files). However, four sample folders (DRX333539, DRX333586, DRX333596, and DRX333675) contain three FASTQ files. The third FASTQ file contains sequences of which paired-sequences were not found, which can simply be discarded when you want to reproduce the analyses.
+:heavy_exclamation_mark: Each sample folder usually contains two FASTQ files (paired-end files). However, four sample folders (DRX333539, DRX333586, DRX333596, and DRX333675) contain three FASTQ files. The third FASTQ file contains sequences of which paired-sequences were not found, which can simply be discarded when you want to reproduce the analyses.
 
 ```
 # Go to the repository folder
