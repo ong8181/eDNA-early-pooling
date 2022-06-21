@@ -1,7 +1,7 @@
-# Analysis codes for Ushio et al. (accepted) "An efficient early-pooling protocol for environmental DNA metabarcoding" _Environmental DNA_
+# Analysis codes for Ushio et al. (2022) "An efficient early-pooling protocol for environmental DNA metabarcoding" _Environmental DNA_
 [![DOI](https://zenodo.org/badge/458195380.svg)](https://zenodo.org/badge/latestdoi/458195380)
 
-This repository contains analysis codes to reproduce the results in Ushio et al. (accepted) _Environmental DNA_. A preprint version is also available in
+This repository contains analysis codes to reproduce the results in Ushio et al. (2022) _Environmental DNA_. A preprint version is also available in
 _bioRxiv_ https://doi.org/10.1101/2022.02.15.480497.
 
 :heavy_exclamation_mark: If you want to perform the analyses from the demultiplexing step using the original FASTQ files, you should download FASTQ files from DDBJ (see the section "Downloading sequence data" below). Note that the FASTQ file in DDBJ are renamed to follow DDBJ instructions. The FASTQ files should be re-renamed by executing the commands in the section "Downloading sequence data".
@@ -21,7 +21,7 @@ Codes in this folder were used to rename and demultiplex the original FASTQ file
 
 ## Step 2. Sequence data processing (`dada2` and `DECIPHER`)
 - `02_DADA2/`: Create an ASV-sample matrix using `dada2` <br>
-- `03_OTUClustering.R`: Cluster ASVs into OTUs using `DECIPHER`<br>
+- `03_OTUClustering.R`: Cluster ASVs into OTUs using `DECIPHER`. `DECIPHER` version should be <= 2.22.0.<br>
 
 
 ## Step 3. Taxa assignments (`Claident`)
