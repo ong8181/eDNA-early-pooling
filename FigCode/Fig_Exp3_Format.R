@@ -148,7 +148,7 @@ g5 <- fig_13_rareotu[[1]] + scale_x_discrete(labels = c("Detected\nOTUs\nin 1-re
                                                         "Newly\ndetected\nOTUs\nin 4-rep.",
                                                         "Newly\ndetected\nOTUs\nin 8-rep.")) +
   scale_color_startrek(name = "Treatment", labels = c("1-rep.", "2-rep.", "4-rep.", "8-rep.")) + 
-  ggtitle("Sea_Nagahama, Replication test") +
+  ggtitle("Sea_Nagahama, Replicate test") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = 1))
 ### Volume test
 g6 <- fig_13_rareotu[[3]] + scale_x_discrete(labels = c("Detected\nOTUs\nin 1-µl",
